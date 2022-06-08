@@ -1,6 +1,6 @@
 const Product = require("../models/productModel");
 const User=require("../models/userModel")
-
+const ApiFeatures = require("../utils/apifeatures");
 
 // Create Product
 exports.createProduct = async (req, res,next) => {
@@ -32,10 +32,27 @@ exports.createProduct = async (req, res,next) => {
 // Get all product list 
 exports.getAllProducts = async(req, res, next) => {
     try{
-        const products = await Product.find();
+         
+        const resultPerPage = 8;
+        const productsCount = await Product.countDocuments();
+        // querying a keyword, filtering the data and changing page with new data in your API
+        const apiFeature = new ApiFeatures(Product.find(), req.query)
+            .search()
+            .filter()
+
+        let products = await apiFeature.query;
+
+        let filteredProductsCount = products.length;
+
+        apiFeature.pagination(resultPerPage);
+
+        products = await apiFeature.query.clone();
+
         res.status(200).json({
             success: true,
             products,
+            productsCount,
+            filteredProductsCount
         });
     }catch(error){
         res.status(500).json({
