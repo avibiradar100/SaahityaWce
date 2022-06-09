@@ -67,6 +67,8 @@ exports.getProductDetails = async (req, res, next) => {
     try {
         const product = await Product.findById(req.params.id);
 
+        const user=await User.findById(product.owner);
+
         if (!product) {
             return res.status(404).json({
                 success:false,
@@ -76,7 +78,8 @@ exports.getProductDetails = async (req, res, next) => {
 
         res.status(200).json({
             success: true,
-            product
+            product,
+            user
         });
 
     } catch (error) {

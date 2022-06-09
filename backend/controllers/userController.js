@@ -1,13 +1,20 @@
 const User=require('../models/userModel');
 const {sendEmail} =require('../middleware/sendEmail');
-const crypto=require('crypto')
+const crypto=require("crypto")
+const cloudinary = require("cloudinary");
 
 exports.registerUser= async(req,res)=>{
 
     try {
+         // cloudinar
 
-        const{name,email,phone,password}=req.body;
-        
+        const { name, email, phone,password} = req.body;
+
+         const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+            folder: "avatars",
+            width: 150,
+            crop: "scale",
+        });
         let user= await User.findOne({email});
   
         if(user){
@@ -27,12 +34,15 @@ exports.registerUser= async(req,res)=>{
                 message:"User Already Exists"
             })
         }
-        
         user=await User.create({
             name,
             email,
             phone,
             password,
+            avatar: {
+                public_id: myCloud.public_id,
+                url: myCloud.secure_url,
+            },
         });
 
         const token= await user.generateToken();
@@ -51,28 +61,27 @@ exports.registerUser= async(req,res)=>{
     } catch (error) {
         res.status(500).json({
             success:false,
-            message:error.message
+            message:error
         })
     }
-
 };
 
 exports.loginUser= async(req,res)=>{
 
     try {
 
-        const {emailPhone,password}=req.body;
-
-        if (!emailPhone || !password) {
+        const {email,password}=req.body;
+       
+        if (!email || !password) {
             return res.status(400).json({
                 success:false,
-                message:"please Enter Email/Phone and password"
+                message:"please Enter Email / Phone and password"
             })
         }
-        let user= await User.findOne({email:emailPhone}).select("+password");
+        let user= await User.findOne({email:email}).select("+password");
 
         if(!user){
-           user= await User.findOne({phone:emailPhone}).select("+password");
+           user= await User.findOne({phone:email}).select("+password");
         }
 
         if(!user){
@@ -92,22 +101,23 @@ exports.loginUser= async(req,res)=>{
         }
         
         const token= await user.generateToken();
-
         const options={
             expires:new Date(Date.now()+ 30*24*60*60*1000),
             httpOnly:true
         }
 
-        res.status(400).cookie("token",token,options).json({
+        res.status(200).cookie("token",token,options).json({
             success:true,
+            message:"login success",
             user,
             token
         })
 
     } catch (error) {
+        console.log(error);
         res.status(500).json({
             success:false,
-            message:error.message
+            message:error
         })
     }
 }
