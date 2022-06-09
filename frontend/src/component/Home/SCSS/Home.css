@@ -162,10 +162,10 @@
 }
 
 .container .productCard div .span {
-  margin: 0.5vmax 0vmax;
+  margin-top: 0.8vmax 0vmax;
   font: 500 1.2vmax "Roboto", Arial, sans-serif;
   width: 10vmax;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .container .productCard > .productPriceSpan {
@@ -206,7 +206,7 @@
     width: 15vmax;
   }
   .container .productCard div .span {
-    margin: 0 0.5vmax;
+    margin: 0.5vmax;
     font: 300 1vmax "Roboto", Arial, sans-serif;
   }
   .container .productCard > .productPriceSpan {

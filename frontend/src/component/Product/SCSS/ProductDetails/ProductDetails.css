@@ -92,13 +92,14 @@ body {
 .ProductDetails .detailsBlock-2 p {
   color: #323232;
    font: 400 1vmax "Roboto";
+   padding-bottom: 1vmax;
 }
 
 .ProductDetails .detailsBlock-3 {
   width: 70%;
 }
 
-.ProductDetails .detailsBlock-3 h1 {
+.ProductDetails .detailsBlock-3 h2 {
   color: rgba(17, 17, 17, 0.82);
   font: 400 1.8vmax "Franklin Gothic Medium";
   margin: 1vmax 0;
@@ -215,9 +216,10 @@ body {
 }
 
 .ProductDetails .detailsBlock-4 p {
-  color: #000000;
-  font: 500 1.4vmax "Roboto";
-}
+    color: #000000;
+    font: 800 1.8vmax "Roboto";
+    padding-left: 2vmax;
+  }
 
 .ProductDetails .submitReview {
   border-radius: 20px;
@@ -356,11 +358,12 @@ body {
             justify-content: center;
   }
 .ProductDetails .detailsBlock-2 h2 {
-   font-size: 2.5vmax;
+   font-size: 1.8vmax;
    padding-bottom: 1vmax;
 }
 .ProductDetails .detailsBlock-2 p {
-   font-size: 2.1vmax;
+   font-size: 2.0vmax;
+   padding-bottom: 2vmax;
 }
   .ProductDetails .detailsBlock-3 h2 {
     font: 700 3vmax "Franklin Gothic Medium";
@@ -396,11 +399,11 @@ body {
     font: 400 1.8vmax "Roboto";
   }
   .ProductDetails .detailsBlock-4 {
-    font: 500 1.4vmax "Roboto";
+    font: 500 1.5vmax "Roboto";
   }
   .ProductDetails .detailsBlock-4 p {
     color: #000000;
-    font: 800 1.6vmax "Roboto";
+    font: 800 1.8vmax "Roboto";
   }
   .ProductDetails .submitReview {
     font: 500 1.7vmax "Roboto";
