@@ -33,7 +33,7 @@ exports.createProduct = async (req, res,next) => {
 exports.getAllProducts = async(req, res, next) => {
     try{
          
-        const resultPerPage = 8;
+        const resultPerPage = 5;
         const productsCount = await Product.countDocuments();
         // querying a keyword, filtering the data and changing page with new data in your API
         const apiFeature = new ApiFeatures(Product.find(), req.query)
@@ -52,6 +52,7 @@ exports.getAllProducts = async(req, res, next) => {
             success: true,
             products,
             productsCount,
+            resultPerPage,
             filteredProductsCount
         });
     }catch(error){

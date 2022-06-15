@@ -3,7 +3,7 @@ import Header from "./component/layout/Header/Header.js";
 import Footer from "./component/layout/Footer/Footer.js"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WebFont from "webfontloader";
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import Home from "./component/Home/Home.js";
 import ProductDetails from "./component/Product/ProductDetails.js";
 import Products from "./component/Product/Products.js";
@@ -13,9 +13,6 @@ import store from "./store";
 import { loadUser } from './actions/userAction';
 import UserOptions from "./component/layout/Header/UserOptions.js";
 import { useSelector } from "react-redux";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import axios from 'axios';
 import ProtectedRoute from "./component/Route/ProtectedRoute.js";
 import AdminRoute from "./component/Route/AdminRoute.js";
 import Profile from "./component/User/Profile.js";
@@ -24,10 +21,7 @@ import UpdatePassword from "./component/User/UpdatePassword.js";
 import ForgotPassword from "./component/User/ForgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
 import Cart from "./component/Cart/Cart.js";
-import Shipping from "./component/Cart/Shipping.js";
 import ConfirmOrder from "./component/Cart/ConfirmOrder.js";
-import Payment from "./component/Cart/Payment.js"
-import OrderSuccess from "./component/Cart/OrderSuccess.js";
 import MyOrders from "./component/Order/MyOrders.js";
 import OrderDetails from "./component/Order/OrderDetails.js";
 import Dashboard from "./component/Admin/Dashboard.js";
@@ -47,14 +41,6 @@ function App() {
 
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
-  const [stripeApiKey, setStripeApiKey] = useState("");
-
-  async function getStripeApiKey() {
-    const { data } = await axios.get("/api/v1/stripeapikey");
-
-    setStripeApiKey(data.stripeApiKey);
-  }
-
 
   //  calling useEffect for font so that it load font first
   useEffect(() => {
@@ -65,8 +51,6 @@ function App() {
     });
 
     store.dispatch(loadUser());
-
-    getStripeApiKey();
   }, []);
 
 
@@ -94,15 +78,6 @@ function App() {
           <Route exact path='/account' element={<Profile />} />
           <Route exact path='/me/update' element={<UpdateProfile />} />
           <Route exact path='/password/update' element={<UpdatePassword />} />
-          <Route exact path="/login/shipping" element={<Shipping />} />
-          <Route exact path="/success" element={<OrderSuccess />} />
-          <Route exact path="/process/payment/*" element={stripeApiKey && (
-            <Elements stripe={loadStripe(stripeApiKey)}>
-              <Routes>
-                <Route path="/" element={<Payment />} />
-              </Routes>
-            </Elements>
-          )} />
           <Route exact path="/orders" element={<MyOrders />} />
           <Route exact path="/order/confirm" element={<ConfirmOrder />} />
           <Route exact path="/order/:id" element={<OrderDetails />} />

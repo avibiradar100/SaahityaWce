@@ -34,12 +34,11 @@ export const getProduct = (keyword = "", currentPage = 1,category) => async (dis
             type: ALL_PRODUCT_REQUEST,
         });
 
-        let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`;
+         let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`;
 
-        if (category) {
-            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`;
-        }
-
+        if (category) 
+          link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
+    
         const { data } = await axios.get(link);
 
         dispatch({

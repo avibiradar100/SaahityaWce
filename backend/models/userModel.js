@@ -22,6 +22,11 @@ const userSchema = new mongoose.Schema({
         minlength:[10,"Number must be 10 digit only"],
         maxlength:[10,"Number must be 10 digit only"]
     },
+    role: {
+        type: String,
+        default: "admin"
+    },
+
     password: {
         type: String,
         required: [true, "Please enter your password"],
