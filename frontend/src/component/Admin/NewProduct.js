@@ -7,10 +7,8 @@ import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
 import "./SCSS/NewProduct/NewProduct.css";
 
@@ -26,19 +24,8 @@ const NewProduct = () => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [stock, setStock] = useState(0);
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
-
-    const categories = [
-        "Laptop",
-        "Footwear",
-        "Bottom",
-        "Tops",
-        "Attire",
-        "Camera",
-        "SmartPhones",
-    ];
 
     useEffect(() => {
         if (error) {
@@ -58,20 +45,21 @@ const NewProduct = () => {
         e.preventDefault();
         const myForm = new FormData();
 
-
         myForm.set("name", name);
         myForm.set("price", price);
         myForm.set("description", description);
         myForm.set("category", category);
-        myForm.set("stock", stock);
-
+         console.log(myForm);
+         console.log(name);
+         console.log(price);
+         console.log(images);
         images.forEach((image) => {
             myForm.append("images", image);
         });
         dispatch(createProduct(myForm));
 
     }
-
+   
     const createProductImagesChange = (e) => {
         const files = Array.from(e.target.files);
 
@@ -95,9 +83,7 @@ const NewProduct = () => {
 
     return (
         <>
-            <MetaData title="Create Product -- Admin" />
-            <div className="dashboard">
-                <SideBar />
+            <MetaData title="Create Product" />
                 <div className="newProductContainer">
                     <form
                         className="createProductForm"
@@ -112,6 +98,7 @@ const NewProduct = () => {
                                 type="text"
                                 placeholder="Product Name"
                                 required
+                                name="name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
@@ -121,6 +108,7 @@ const NewProduct = () => {
                             <input
                                 type="number"
                                 placeholder="Price"
+                                name="price"
                                 required
                                 onChange={(e) => setPrice(e.target.value)}
                             />
@@ -132,6 +120,7 @@ const NewProduct = () => {
                             <textarea
                                 placeholder="Product Description"
                                 value={description}
+                                name="description"
                                 onChange={(e) => setDescription(e.target.value)}
                                 cols="30"
                                 rows="1"
@@ -140,23 +129,11 @@ const NewProduct = () => {
 
                         <div>
                             <AccountTreeIcon />
-                            <select onChange={(e) => setCategory(e.target.value)}>
-                                <option value="">Choose Category</option>
-                                {categories.map((cate) => (
-                                    <option key={cate} value={cate}>
-                                        {cate}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-
-                        <div>
-                            <StorageIcon />
-                            <input
-                                type="number"
-                                placeholder="Stock"
-                                required
-                                onChange={(e) => setStock(e.target.value)}
+                             <input
+                                type="text"
+                                name="category"
+                                placeholder="Category"
+                                onChange={(e) => setCategory(e.target.value)}
                             />
                         </div>
 
@@ -185,7 +162,6 @@ const NewProduct = () => {
                         </Button>
                     </form>
                 </div>
-            </div>
         </>
     )
 }

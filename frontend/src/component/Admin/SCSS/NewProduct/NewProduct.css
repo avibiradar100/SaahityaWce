@@ -156,6 +156,15 @@
   }
   .newProductContainer .createProductForm {
     padding: 5vmax;
+    margin: auto;
+    height: 70%;
+    width: 36vh;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(0 0 0 / 27%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
   }
   .newProductContainer .createProductForm > div > input,
   .newProductContainer .createProductForm > div > select,

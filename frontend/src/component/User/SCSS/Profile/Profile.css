@@ -67,7 +67,7 @@
   text-decoration: none;
   padding: 0.5vmax;
   width: 30%;
-  margin: 4vmax;
+  margin: 1.2vmax;
   text-align: center;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -75,6 +75,25 @@
 
 .profileContainer > div:first-child > a:hover {
   background-color: #cc4e38;
+}
+.profileContainer > div:first-child > button {
+  color: white;
+  font: 400 1vmax "Roboto";
+  border: none;
+  background-color: tomato;
+  text-decoration: none;
+  padding: 0.5vmax;
+  width: 30%;
+  margin: 1.2vmax;
+  text-align: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+
+.profileContainer > div:first-child > button:hover {
+  background-color: #cc4e38;
+  cursor: pointer;
 }
 
 .profileContainer > div:last-child {

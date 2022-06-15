@@ -61,7 +61,7 @@ export const getAdminProduct = () => async (dispatch) => {
             type: ADMIN_PRODUCT_REQUEST,
         });
 
-        let link = `/api/v1/admin/products`;
+        let link = `/api/v1/products`;
 
         const { data } = await axios.get(link);
 
@@ -81,7 +81,7 @@ export const getAdminProduct = () => async (dispatch) => {
 // Create Product
 export const createProduct = (productData) => async (dispatch) => {
     try {
-
+        console.log(productData);
         dispatch({
             type: NEW_PRODUCT_REQUEST,
         });
@@ -90,7 +90,7 @@ export const createProduct = (productData) => async (dispatch) => {
             headers: { "Content-Type": "application/json" },
         };
 
-        let link = `/api/v1/admin/product/new`;
+        let link = `/api/v1/products/new`;
 
         const { data } = await axios.post(link, productData, config);
 

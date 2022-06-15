@@ -31,6 +31,10 @@ import {
     DELETE_USER_SUCCESS,
     DELETE_USER_FAIL,
     DELETE_USER_RESET,
+    DELETE_PROFILE_REQUEST,
+    DELETE_PROFILE_SUCCESS,
+    DELETE_PROFILE_FAIL,
+    DELETE_PROFILE_RESET,
     UPDATE_USER_REQUEST,
     UPDATE_USER_SUCCESS,
     UPDATE_USER_FAIL,
@@ -109,6 +113,7 @@ export const profileReducer = (state = {}, action) => {
         case UPDATE_PASSWORD_REQUEST:
         case UPDATE_USER_REQUEST:
         case DELETE_USER_REQUEST:
+        case DELETE_PROFILE_REQUEST:
             return {
                 ...state,
                 loading: true,
@@ -123,6 +128,7 @@ export const profileReducer = (state = {}, action) => {
             };
 
         case DELETE_USER_SUCCESS:
+        case DELETE_PROFILE_SUCCESS:
             return {
                 ...state,
                 loading: false,
@@ -134,6 +140,7 @@ export const profileReducer = (state = {}, action) => {
         case UPDATE_PASSWORD_FAIL:
         case UPDATE_USER_FAIL:
         case DELETE_USER_FAIL:
+        case DELETE_PROFILE_FAIL:
             return {
                 ...state,
                 loading: false,
@@ -149,6 +156,7 @@ export const profileReducer = (state = {}, action) => {
             };
 
         case DELETE_USER_RESET:
+        case DELETE_PROFILE_RESET:
             return {
                 ...state,
                 isDeleted: false,

@@ -28,6 +28,9 @@ import {
     DELETE_USER_REQUEST,
     DELETE_USER_SUCCESS,
     DELETE_USER_FAIL,
+    DELETE_PROFILE_REQUEST,
+    DELETE_PROFILE_SUCCESS,
+    DELETE_PROFILE_FAIL,
     UPDATE_USER_REQUEST,
     UPDATE_USER_SUCCESS,
     UPDATE_USER_FAIL,
@@ -90,7 +93,7 @@ export const loadUser = () => async (dispatch) => {
 }
 
 // LogOut User
-export const logout = () => async (dispatch) => {
+export const logoutUser = () => async (dispatch) => {
     try {
 
         await axios.get(`/api/v1/logout`);
@@ -241,6 +244,26 @@ export const deleteUser = (id) => async (dispatch) => {
             payload: error.response.data.message,
         });
     }
+};
+
+export const deleteMyProfile = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: DELETE_PROFILE_REQUEST,
+    });
+
+    const { data } = await axios.delete("/api/v1/delete/me");
+
+    dispatch({
+      type: DELETE_PROFILE_SUCCESS,
+      payload: data.message,
+    });
+  } catch (error) {
+    dispatch({
+      type: DELETE_PROFILE_FAIL,
+      payload: error.response.data.message,
+    });
+  }
 };
 
 // Clearing the errors

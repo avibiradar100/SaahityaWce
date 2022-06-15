@@ -35,6 +35,7 @@ ChartJS.register(
 
 const Dashboard = () => {
 
+    console.log("Hello");
     const dispatch = useDispatch();
 
     const { products } = useSelector((state) => state.products);
