@@ -170,23 +170,37 @@
     font: 400 1.7vmax "Roboto";
     padding: 1vmax;
   }
-  .profileContainer > div:last-child {
-    text-align: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .profileContainer > div:last-child > div > h4 {
-    font: 400 2.5vmax "Roboto";
-  }
-  .profileContainer > div:last-child > div > p {
-    font: 400 2vmax cursive;
-    margin: 0.5vmax 0;
-  }
-  .profileContainer > div:last-child > div:last-child > a {
-    font: 400 1.8vmax "Roboto";
+  .profileContainer > div:first-child > button {
+    color: white;
+    font: 400 1.6vmax "Roboto";
+    border: none;
+    background-color: tomato;
+    text-decoration: none;
     padding: 1vmax;
-    margin: 2vmax 0;
-  }
+    width: 34%;
+    text-align: center;
+    transition: all 0.5s;
+}
+.profileContainer .profileTop{
+  margin-bottom: -150px;
+}
+.profileContainer > div:last-child {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.profileContainer > div:last-child > div > h4 {
+  font: 400 2.5vmax "Roboto";
+}
+.profileContainer > div:last-child > div > p {
+  font: 400 2vmax cursive;
+  margin: 0.5vmax 0;
+}
+.profileContainer > div:last-child > div:last-child > a {
+  font: 400 1.8vmax "Roboto";
+  padding: 1vmax;
+  margin: 2vmax 0;
+}
 }
 /*# sourceMappingURL=Profile.css.map */

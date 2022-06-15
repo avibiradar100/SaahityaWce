@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
+import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 import MouseIcon from '@mui/icons-material/Mouse';
 import "./SCSS/Home.css";
@@ -45,6 +46,10 @@ const Home = () => {
                         {products && products.map((product) =>
                             <ProductCard key={product._id} product={product} />)}
                     </div>
+                    <div className='more'>
+                        <Link to="/products">More Products</Link>
+                    </div>
+                    
                 </>}
         </>
     );

@@ -180,6 +180,24 @@
   -webkit-transform: translateY(-1vmax);
           transform: translateY(-1vmax);
 }
+.more{
+    margin:0% 0% 5% 45%;
+}
+.more > a{
+  color: white;
+  font: 400 1.3vmax "Roboto";
+  border: none;
+  background-color: tomato;
+  text-decoration: none;
+  padding: 1.0vmax;
+  text-align: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.more > a:hover {
+  background-color: #cc4e38;
+}
 
 /*
  ______________________________________________
@@ -213,6 +231,13 @@
   }
   .container .productCard > .productPriceSpan {
     font-size: 1.5vmax;
+  }
+  .more{
+    margin:0% 31% 12%;
+  }
+  .more > a {
+    font: 400 1.7vmax "Roboto";
+    padding: 2vmax;
   }
 }
 /*# sourceMappingURL=Home.css.map */

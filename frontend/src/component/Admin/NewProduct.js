@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../layout/Loader/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { clearErrors, createProduct } from "../../actions/productAction";
@@ -18,7 +19,7 @@ const NewProduct = () => {
     const alert = useAlert();
     const navigate = useNavigate();
 
-    const { loading, error, success } = useSelector((state) => state.newProduct);
+    const { loading, error, success,product} = useSelector((state) => state.newProduct);
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
@@ -35,10 +36,10 @@ const NewProduct = () => {
 
         if (success) {
             alert.success("Product Created Successfully");
-            navigate("/admin/dashboard");
+            navigate(`/product/${product._id}`);
             dispatch({ type: NEW_PRODUCT_RESET });
         }
-    }, [dispatch, alert, error, success, navigate]);
+    }, [dispatch, alert, error, success, product,navigate]);
 
 
     const createProductSubmitHandler = (e) => {
@@ -83,6 +84,7 @@ const NewProduct = () => {
 
     return (
         <>
+         {loading ?<Loader /> : <>
             <MetaData title="Create Product" />
                 <div className="newProductContainer">
                     <form
@@ -90,7 +92,7 @@ const NewProduct = () => {
                         encType="multipart/form-data"
                         onSubmit={createProductSubmitHandler}
                     >
-                        <h1>Create Product</h1>
+                        <h1>Create New Product</h1>
 
                         <div>
                             <SpellcheckIcon />
@@ -162,6 +164,7 @@ const NewProduct = () => {
                         </Button>
                     </form>
                 </div>
+            </>}
         </>
     )
 }

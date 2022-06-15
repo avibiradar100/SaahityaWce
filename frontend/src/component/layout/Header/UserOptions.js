@@ -21,7 +21,7 @@ const UserOptions = ({ user }) => {
     const dispatch = useDispatch();
 
     const options = [
-        { icon: <AddIcon />, name: "Create", func: create },
+        { icon: <AddIcon />, name: "Create Product", func: add },
         { icon: <PersonIcon />, name: "Profile", func: account },
         { icon: <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}} />, name: `Cart(${cartItems.length})`, func: cart },
         { icon: <ExitToAppIcon />, name: "Logout", func: logoutuser },
@@ -41,7 +41,7 @@ const UserOptions = ({ user }) => {
         navigate("/admin/dashboard");
     }
 
-    function create() {
+    function add() {
         navigate("/create/product");
     }
     function account() {

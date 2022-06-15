@@ -1,4 +1,5 @@
 const User=require('../models/userModel');
+const Product=require('../models/productModel');
 const {sendEmail} =require('../middleware/sendEmail');
 const crypto=require("crypto")
 const cloudinary = require("cloudinary");
@@ -219,8 +220,7 @@ exports.updatePofile=async(req,res)=>{
 exports.deleteMyProfile=async(req,res)=>{
     try {
         const user=await User.findById(req.user._id);
-        const products=user.products;
-        const userId=user._id;
+        const totproducts=user.products;
         await user.remove();
 
         // logout user after deleting profile
@@ -231,8 +231,8 @@ exports.deleteMyProfile=async(req,res)=>{
         res.cookie("token",null,options);
 
         //delete all products of user
-        for(let i=0;i<products.legth;i++){
-            const product=await products.findById(products[i]);
+        for(let i=0;i<totproducts.length;i++){
+            const product=await Product.findById(totproducts[i]);
             await product.remove();
         }   
         res.status(200).json({
