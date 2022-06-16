@@ -47,7 +47,8 @@ const Home = () => {
                             <ProductCard key={product._id} product={product} />)}
                     </div>
                     <div className='more'>
-                        <Link to="/products">More Products</Link>
+                        {products && products.length ? (<>
+                            <Link to="/products">View All Products</Link></>):(<></>)}
                     </div>
                     
                 </>}
