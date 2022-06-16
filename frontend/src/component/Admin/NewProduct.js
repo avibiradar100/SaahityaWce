@@ -50,10 +50,7 @@ const NewProduct = () => {
         myForm.set("price", price);
         myForm.set("description", description);
         myForm.set("category", category);
-         console.log(myForm);
-         console.log(name);
-         console.log(price);
-         console.log(images);
+       
         images.forEach((image) => {
             myForm.append("images", image);
         });

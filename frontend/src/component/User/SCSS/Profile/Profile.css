@@ -19,6 +19,7 @@
   max-width: 100%;
   top: 0%;
   left: 0%;
+  z-index: 1;
 }
 
 .profileContainer > div {
@@ -182,7 +183,7 @@
     transition: all 0.5s;
 }
 .profileContainer .profileTop{
-  margin-bottom: -150px;
+  margin-bottom: -50px;
 }
 .profileContainer > div:last-child {
   text-align: center;

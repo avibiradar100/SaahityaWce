@@ -17,8 +17,10 @@ exports.createProduct = async (req, res,next) => {
         const imagesLinks = [];
 
         for (let i = 0; i < images.length; i++) {
-            const result = await cloudinary.uploader.upload(images[i], {
+            const result = await cloudinary.uploader.upload_large(images[i], {
             folder: "Images",
+           chunk_size: 6000000
+
         });
 
             imagesLinks.push({
