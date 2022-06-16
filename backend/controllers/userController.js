@@ -190,7 +190,7 @@ exports.updatePofile=async(req,res)=>{
     try {
         const user=await User.findById(req.user._id);
 
-        const {name,phone,email}=req.body;
+        const {name,phone,email,avatar}=req.body;
 
         if(name){
              user.name=name
@@ -200,6 +200,16 @@ exports.updatePofile=async(req,res)=>{
         }
         if(phone){
              user.phone=phone
+        }
+        if (avatar) {
+            await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+        
+            const myCloud = await cloudinary.v2.uploader.upload(avatar, {
+                    folder: "avatars",
+            });
+
+            user.avatar.public_id = myCloud.public_id;
+            user.avatar.url = myCloud.secure_url;
         }
 
         await user.save();
@@ -221,6 +231,10 @@ exports.deleteMyProfile=async(req,res)=>{
     try {
         const user=await User.findById(req.user._id);
         const totproducts=user.products;
+
+        //Remove avatar data from cloudinary
+        await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+
         await user.remove();
 
         // logout user after deleting profile
@@ -233,6 +247,8 @@ exports.deleteMyProfile=async(req,res)=>{
         //delete all products of user
         for(let i=0;i<totproducts.length;i++){
             const product=await Product.findById(totproducts[i]);
+            for(let j=0;j<product.images.length;j++)
+                await cloudinary.v2.uploader.destroy(product.images[j].public_id);
             await product.remove();
         }   
         res.status(200).json({
