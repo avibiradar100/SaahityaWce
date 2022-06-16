@@ -115,7 +115,7 @@
 }
 
 .profileContainer > div:last-child > div > p {
-  color: rgba(0, 0, 0, 0.411);
+  color:black;
   font: 400 1vmax cursive;
   margin: 0.2vmax;
 }
