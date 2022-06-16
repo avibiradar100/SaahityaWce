@@ -8,7 +8,6 @@ import { useSelector} from "react-redux";
 const ProductCard = ({ product }) => {
 
     const {isAuthenticated,user} = useSelector((state) => state.user);
-
     return (
         <Link className='productCard' to={`/product/${product._id}`}>
             <img src={product.images[0].url} alt={product.name} />

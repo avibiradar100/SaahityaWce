@@ -25,15 +25,14 @@ const MyProducts = () => {
         }
     }, [dispatch, error,isAuthenticated,alert, keyword]);
 
-
     return (
         <>
             {loading ? (<Loader />) : (<>
                 <MetaData title="My Products" />
                 <h2 className="productsHeading">My Products</h2>
                 <div className="container">
-                    {user.products && user.products.map((product) => {
-                        return <ProductCard key={product._id} product={product} />
+                    {user.products.length && user.products.map((product,index) => {
+                        return <ProductCard key={index} product={product} />
                     })}
                 </div>
             </>)}

@@ -22,6 +22,7 @@ const Profile = () => {
         if (isAuthenticated === false) {
             navigate("/login");
         }
+        
     }, [navigate,alert,error,isAuthenticated]);
 
     const deleteProfileHandler = async() => {

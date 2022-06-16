@@ -6,7 +6,7 @@ import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
 import PhoneIcon from '@mui/icons-material/Phone';
 import { useDispatch, useSelector } from "react-redux";
-import { clearErrors, login, register } from "../../actions/userAction.js";
+import { clearErrors, loadUser,login, register } from "../../actions/userAction.js";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
 
@@ -42,9 +42,10 @@ const LoginSignUp = () => {
     const [avatar, setAvatar] = useState("/Profile.png");
     const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
 
-    const loginSubmit = (e) => {
+    const loginSubmit = async(e) => {
         e.preventDefault();
-        dispatch(login(loginEmail, loginPassword));
+        await dispatch(login(loginEmail, loginPassword));
+        dispatch(loadUser());
     }
 
     
@@ -52,6 +53,7 @@ const LoginSignUp = () => {
     const registerSubmit =async (e) => {
         e.preventDefault();
         await dispatch(register(name,email,password,phone,avatar));
+        dispatch(loadUser());
     }
 
     const registerDataChange = (e) => {
