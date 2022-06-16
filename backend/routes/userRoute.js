@@ -11,7 +11,7 @@ router.route('/update/profile').put(isAuthenticated,updatePofile);
 router.route('/delete/me').delete(isAuthenticated,deleteMyProfile);
 router.route('/me').get(isAuthenticated,myProfile);
 router.route('/user/:id').get(isAuthenticated,getUserProfile);
-router.route('/users').get(isAuthenticated,getAllUsers);
+router.route('/admin/users').get(isAuthenticated,getAllUsers);
 router.route('/forgot/password').post(forgotPassword);
 router.route('/reset/password/:token').put(resetPassword)
 

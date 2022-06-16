@@ -61,7 +61,7 @@ export const getAdminProduct = () => async (dispatch) => {
             type: ADMIN_PRODUCT_REQUEST,
         });
 
-        let link = `/api/v1/products`;
+        let link = `/api/v1/admin/products`;
 
         const { data } = await axios.get(link);
 

@@ -190,6 +190,23 @@ exports.updateProduct = (async (req, res, next) => {
     }
 });
 
+//Get all product list -- ADMIN
+exports.getAdminProducts = async (req, res, next) => {
+     try {
+        const products = await Product.find();
+
+        res.status(200).json({
+            success: true,
+            products
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:error.message
+        })
+    }
+};
 
 // Delete Product
 exports.deleteProduct = async (req, res, next) => {

@@ -61,14 +61,6 @@ const ProductList = () => {
             flex: 1,
         },
         {
-            field: "stock",
-            headerName: "Stock",
-            type: "number",
-            minWidth: 150,
-            flex: 0.3,
-        },
-
-        {
             field: "price",
             headerName: "Price",
             type: "number",
@@ -107,7 +99,6 @@ const ProductList = () => {
         products.forEach((item) => {
             rows.push({
                 id: item._id,
-                stock: item.stock,
                 price: item.price,
                 name: item.name,
             });

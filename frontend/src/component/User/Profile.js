@@ -49,23 +49,23 @@ const Profile = () => {
                             </div>
 
                             <div>
-                                <div>
+                                <div className='innerDiv'>
                                     <h4>Full Name</h4>
                                     <p>{user.name}</p>
                                 </div>
-                                <div>
+                                <div className='innerDiv'>
                                     <h4>Email</h4>
                                     <p>{user.email}</p>
                                 </div>
-                                <div>
+                                <div className='innerDiv'>
                                     <h4>Phone</h4>
                                     <p>{user.phone}</p>
                                 </div>
-                                <div>
+                                <div className='innerDiv'>
                                     <h4>Total Products</h4>
                                     <p>{user.products.length}</p>
                                 </div>
-                                <div>
+                                <div className='innerDiv'>
                                     <h4>Joined On</h4>
                                     <p>{String(user.createdAt).substr(0, 10)}</p>
                                 </div>

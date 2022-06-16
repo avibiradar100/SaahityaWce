@@ -26,8 +26,6 @@ import Dashboard from "./component/Admin/Dashboard.js";
 import MyProducts from "./component/MyProduct/MyProducts.js";
 import ProductList from "./component/Admin/ProductList.js";
 import UpdateProduct from "./component/Product/UpdateProduct.js";
-import OrderList from "./component/Admin/OrderList.js";
-import ProcessOrder from "./component/Admin/ProcessOrder.js";
 import UsersList from "./component/Admin/UsersList.js";
 import UpdateUser from "./component/Admin/UpdateUser.js";
 import NewProduct from './component/Product/NewProduct';
@@ -87,8 +85,6 @@ function App() {
         <Route exact path='/' element={<AdminRoute />}>
           <Route exact path="/admin/dashboard" element={<Dashboard />} />
           <Route exact path="/admin/products" element={<ProductList />} />
-          <Route exact path="/admin/orders" element={<OrderList />} />
-          <Route exact path="/admin/order/:id" element={<ProcessOrder />} />
           <Route exact path="/admin/users" element={<UsersList />} />
           <Route exact path="/admin/user/:id" element={<UpdateUser />} />
 

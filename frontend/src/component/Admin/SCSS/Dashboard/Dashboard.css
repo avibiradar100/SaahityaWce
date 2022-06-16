@@ -22,37 +22,6 @@
   font: 300 2rem "Roboto";
 }
 
-.dashboard .dashboardContainer .dashboardSummary {
-  margin: 2rem 0;
-}
-
-.dashboard .dashboardContainer .dashboardSummary > div {
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: normal;
-      -ms-flex-align: normal;
-          align-items: normal;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.dashboard .dashboardContainer .dashboardSummary > div > p {
-  background-color: rgba(70, 117, 218, 0.932);
-  text-align: center;
-  padding: 1.5rem;
-  width: 100%;
-  margin: 0 2rem;
-  color: white;
-  font: 300 1.3rem "Roboto";
-}
-
 .dashboard .dashboardContainer .dashboardSummaryBox2 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -67,7 +36,8 @@
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  margin-left: 23vmax;
+      /* justify-content: space-around; */
 }
 
 .dashboard .dashboardContainer .dashboardSummaryBox2 > a {
@@ -105,17 +75,6 @@
   background-color: #333333;
   color: white;
 }
-
-.dashboard .lineChart {
-  width: 80%;
-  margin: auto;
-}
-
-.dashboard .doughnutChart {
-  width: 30vmax;
-  margin: auto;
-}
-
 /*
  ______________________________________________
 |                                              |
@@ -129,9 +88,6 @@
   }
   .dashboard .dashboardContainer {
     border-left: none;
-  }
-  .dashboard .dashboardSummary > div > p {
-    margin: 0;
   }
   .dashboard .dashboardSummaryBox2 > a {
     padding: 0.5rem;

@@ -51,7 +51,7 @@
 }
 
 .productListContainer .productListTable a:hover {
-  color: tomato;
+  color:#ec1e1e !important;
 }
 
 .productListContainer .productListTable .button:hover {
