@@ -5,17 +5,18 @@ const crypto=require("crypto")
 const cloudinary = require("cloudinary");
 
 exports.registerUser= async(req,res)=>{
-
+    let myCloud;
     try {
          // cloudinar
 
-        const { name, email, phone,password} = req.body;
+        const { name, email, phone,password,avatar} = req.body;
 
-         const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-            folder: "avatars",
-            width: 150,
-            crop: "scale",
-        });
+        if(!name || !email || !phone || !password || !avatar){
+            return  res.status(400).json({
+                success:false,
+                message:"Please Provide all values"
+            })
+        }
         let user= await User.findOne({email});
   
         if(user){
@@ -35,6 +36,13 @@ exports.registerUser= async(req,res)=>{
                 message:"User Already Exists"
             })
         }
+
+        myCloud = await cloudinary.v2.uploader.upload(avatar, {
+            folder: "avatars",
+            width: 150,
+            crop: "scale",
+        });
+
         user=await User.create({
             name,
             email,
@@ -60,9 +68,12 @@ exports.registerUser= async(req,res)=>{
         })
 
     } catch (error) {
+        
+        await cloudinary.v2.uploader.destroy(myCloud.public_id);  
+        // console.log(error);  
         res.status(500).json({
             success:false,
-            message:error
+            message:error.message
         })
     }
 };
