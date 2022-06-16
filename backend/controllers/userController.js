@@ -63,6 +63,7 @@ exports.registerUser= async(req,res)=>{
 
         res.status(201).cookie("token",token,options).json({
             success:true,
+            message:"registration Done",
             user,
             token
         })

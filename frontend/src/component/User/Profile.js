@@ -4,13 +4,14 @@ import MetaData from "../layout/MetaData";
 import Loader from "../layout/Loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
 // import { Button } from "@mui/material";
+import { useAlert } from "react-alert";
 import "./SCSS/Profile/Profile.css";
 import { logoutUser, deleteMyProfile } from "../../actions/userAction";
 
 const Profile = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const alert = useAlert();
     const { user, loading, error,isAuthenticated } = useSelector((state) => state.user);
 
     useEffect(() => {
@@ -21,11 +22,12 @@ const Profile = () => {
         if (isAuthenticated === false) {
             navigate("/login");
         }
-    }, [navigate, error,isAuthenticated]);
+    }, [navigate,alert,error,isAuthenticated]);
 
     const deleteProfileHandler = async() => {
         await dispatch(deleteMyProfile());
-        dispatch(logoutUser());
+        await dispatch(logoutUser());
+        alert.success("Deleted  Successfully");
     };
 
 
@@ -53,6 +55,14 @@ const Profile = () => {
                                 <div>
                                     <h4>Email</h4>
                                     <p>{user.email}</p>
+                                </div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>{user.phone}</p>
+                                </div>
+                                <div>
+                                    <h4>Total Products</h4>
+                                    <p>{user.products.length}</p>
                                 </div>
                                 <div>
                                     <h4>Joined On</h4>

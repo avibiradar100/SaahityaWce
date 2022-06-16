@@ -49,10 +49,9 @@ const LoginSignUp = () => {
 
     
 
-    const registerSubmit = (e) => {
+    const registerSubmit =async (e) => {
         e.preventDefault();
-        dispatch(register(name,email,password,phone,avatar));
-
+        await dispatch(register(name,email,password,phone,avatar));
     }
 
     const registerDataChange = (e) => {
@@ -168,6 +167,7 @@ const LoginSignUp = () => {
                                 onChange={registerDataChange}
                             />
                         </div>
+                         <p>Select your profile picture</p>
                         <div id="registerImage">
                             <img src={avatarPreview} alt="Avatar Preview" />
                             <input
