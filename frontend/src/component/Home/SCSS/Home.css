@@ -27,7 +27,8 @@
   padding: 2vmax;
   position:absolute;
   top:7vmax;
-  font-weight: bolder
+  left:3vmax;
+  font-weight: bolder;
 }
 
 .banner a {

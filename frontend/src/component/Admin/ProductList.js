@@ -86,7 +86,7 @@ const ProductList = () => {
             renderCell: (params) => {
                 return (
                     <>
-                        <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
+                        <Link to={`/update/product/${params.getValue(params.id, "id")}`}>
                             <EditIcon />
                         </Link>
 

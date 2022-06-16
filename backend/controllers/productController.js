@@ -17,9 +17,8 @@ exports.createProduct = async (req, res,next) => {
         const imagesLinks = [];
 
         for (let i = 0; i < images.length; i++) {
-            const result = await cloudinary.uploader.upload_large(images[i], {
+            const result = await cloudinary.uploader.upload(images[i], {
             folder: "Images",
-           chunk_size: 6000000
 
         });
 
@@ -137,6 +136,40 @@ exports.updateProduct = (async (req, res, next) => {
                 message:"Unauthorized"
             })
         }
+
+        // Images Start Here
+        let images = [];
+
+        if (typeof req.body.images === "string") {
+            images.push(req.body.images);
+        } else {
+            images = req.body.images;
+        }
+
+        if (images !== undefined) {
+            // Deleting Images From Cloudinary
+            for (let i = 0; i < product.images.length; i++) {
+                await cloudinary.uploader.destroy(product.images[i].public_id);
+            }
+
+
+            // Updating New Images in Clodinary
+            const imagesLinks = [];
+
+            for (let i = 0; i < images.length; i++) {
+                const result = await cloudinary.uploader.upload(images[i], {
+                    folder: "images",
+                });
+
+                imagesLinks.push({
+                    public_id: result.public_id,
+                    url: result.secure_url,
+                });
+            }
+
+            req.body.images = imagesLinks;
+        }
+
 
         product = await Product.findByIdAndUpdate(req.params.id, req.body, {
             new: true,

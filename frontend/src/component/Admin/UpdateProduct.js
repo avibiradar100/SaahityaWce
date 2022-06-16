@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Loader from "../layout/Loader/Loader";
 import {
     clearErrors,
     updateProduct,
@@ -11,10 +12,8 @@ import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import SideBar from "./Sidebar";
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
 
 const UpdateProduct = () => {
@@ -37,20 +36,9 @@ const UpdateProduct = () => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [stock, setStock] = useState(0);
     const [images, setImages] = useState([]);
     const [oldImages, setOldImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
-
-    const categories = [
-        "Laptop",
-        "Footwear",
-        "Bottom",
-        "Tops",
-        "Attire",
-        "Camera",
-        "SmartPhones",
-    ];
 
     const productId = id;
 
@@ -62,7 +50,6 @@ const UpdateProduct = () => {
             setDescription(product.description);
             setPrice(product.price);
             setCategory(product.category);
-            setStock(product.stock);
             setOldImages(product.images);
         }
         if (error) {
@@ -77,7 +64,7 @@ const UpdateProduct = () => {
 
         if (isUpdated) {
             alert.success("Product Updated Successfully");
-            navigate("/admin/dashboard");
+            navigate(`/product/${product._id}`);
             dispatch({ type: UPDATE_PRODUCT_RESET });
         }
     }, [
@@ -100,7 +87,6 @@ const UpdateProduct = () => {
         myForm.set("price", price);
         myForm.set("description", description);
         myForm.set("category", category);
-        myForm.set("stock", stock);
 
         images.forEach((image) => {
             myForm.append("images", image);
@@ -131,9 +117,8 @@ const UpdateProduct = () => {
 
     return (
         <>
-            <MetaData title="Update Product -- Admin" />
-            <div className="dashboard">
-                <SideBar />
+           {loading ?<Loader /> : <>
+            <MetaData title="Update Product" />
                 <div className="newProductContainer">
                     <form
                         className="createProductForm"
@@ -177,27 +162,12 @@ const UpdateProduct = () => {
 
                         <div>
                             <AccountTreeIcon />
-                            <select
+                             <input
+                                type="text"
+                                placeholder="Category"
+                                required
                                 value={category}
                                 onChange={(e) => setCategory(e.target.value)}
-                            >
-                                <option value="">Choose Category</option>
-                                {categories.map((cate) => (
-                                    <option key={cate} value={cate}>
-                                        {cate}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-
-                        <div>
-                            <StorageIcon />
-                            <input
-                                type="number"
-                                placeholder="Stock"
-                                required
-                                onChange={(e) => setStock(e.target.value)}
-                                value={stock}
                             />
                         </div>
 
@@ -233,7 +203,7 @@ const UpdateProduct = () => {
                         </Button>
                     </form>
                 </div>
-            </div>
+             </>}
         </>
     );
 };

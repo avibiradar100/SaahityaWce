@@ -13,18 +13,18 @@ const ProductCard = ({ product }) => {
         <Link className='productCard' to={`/product/${product._id}`}>
             <img src={product.images[0].url} alt={product.name} />
             <span className='productPriceSpan'>{`₹${product.price}`}</span>
+            <p>{product.name}</p>
             {isAuthenticated && user._id === product.owner ? 
-                (<>
-                    <Link to='/'>
+                (<div className='productPriceSpan'>
+                    <Link to={`/update/product/${product._id}`}>
                         <EditIcon />
                     </Link>
                     <Button>
                         <DeleteIcon />
                     </Button>
-                </>)
+                </div>)
                 :(<></>)
             }
-            <p>{product.name}</p>
             <div>
                 <span className='span'>{product.category}</span>
                 <span className='span'>{product.createdAt.substring(0,10)}</span>
