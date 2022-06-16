@@ -10,7 +10,8 @@ import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
+// import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
+import { loadUser} from '../../actions/userAction';
 import "./SCSS/NewProduct/NewProduct.css";
 
 const NewProduct = () => {
@@ -36,8 +37,8 @@ const NewProduct = () => {
 
         if (success) {
             alert.success("Product Created Successfully");
+            dispatch(loadUser());
             navigate(`/product/${product._id}`);
-            dispatch({ type: NEW_PRODUCT_RESET });
         }
     }, [dispatch, alert, error, success, product,navigate]);
 

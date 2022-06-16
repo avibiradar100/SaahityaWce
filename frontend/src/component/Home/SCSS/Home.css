@@ -27,7 +27,7 @@
   padding: 2vmax;
   position:absolute;
   top:7vmax;
-  left:3vmax;
+  left:30vmax;
   font-weight: bolder;
 }
 
@@ -211,7 +211,7 @@
    font: 400 3.2vmax "Lucida Sans";
    padding: 2vmax;
    position:absolute;
-   top:7vmax;
+   top:9vmax;
    font-weight: bolder
   }
   .banner a .btn_Scroll {
