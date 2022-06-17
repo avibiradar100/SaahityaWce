@@ -89,6 +89,10 @@
   .dashboard .dashboardContainer {
     border-left: none;
   }
+  .dashboard .dashboardContainer .dashboardSummaryBox2{
+    margin-left: 10vmax;
+  }
+  
   .dashboard .dashboardSummaryBox2 > a {
     padding: 0.5rem;
     margin: 1rem;

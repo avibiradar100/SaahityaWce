@@ -13,7 +13,7 @@ import MetaData from "../layout/MetaData";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
 
 const UpdateProduct = () => {
@@ -138,7 +138,7 @@ const UpdateProduct = () => {
                             />
                         </div>
                         <div>
-                            <AttachMoneyIcon />
+                            <CurrencyRupeeIcon />
                             <input
                                 type="number"
                                 placeholder="Price"

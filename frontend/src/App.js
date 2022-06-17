@@ -21,7 +21,6 @@ import UpdatePassword from "./component/User/UpdatePassword.js";
 import ForgotPassword from "./component/User/ForgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
 import Cart from "./component/Cart/Cart.js";
-import ConfirmOrder from "./component/Cart/ConfirmOrder.js";
 import Dashboard from "./component/Admin/Dashboard.js";
 import MyProducts from "./component/MyProduct/MyProducts.js";
 import ProductList from "./component/Admin/ProductList.js";
@@ -78,7 +77,6 @@ function App() {
           <Route exact path='/password/update' element={<UpdatePassword />} />
            <Route exact path="/my/products" element={<MyProducts/>} />
           <Route exact path="/create/product" element={<NewProduct />} />
-          <Route exact path="/order/confirm" element={<ConfirmOrder />} />
         </Route>
 
         {/* when admin is logged in then it will access these resources */}

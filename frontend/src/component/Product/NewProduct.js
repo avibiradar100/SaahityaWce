@@ -9,8 +9,7 @@ import MetaData from "../layout/MetaData";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-// import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { loadUser} from '../../actions/userAction';
 import "./SCSS/NewProduct/NewProduct.css";
 
@@ -104,7 +103,7 @@ const NewProduct = () => {
                             />
                         </div>
                         <div>
-                            <AttachMoneyIcon />
+                            <CurrencyRupeeIcon />
                             <input
                                 type="number"
                                 placeholder="Price"
