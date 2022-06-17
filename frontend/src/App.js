@@ -85,7 +85,6 @@ function App() {
           <Route exact path="/admin/products" element={<ProductList />} />
           <Route exact path="/admin/users" element={<UsersList />} />
           <Route exact path="/admin/user/:id" element={<UpdateUser />} />
-
         </Route>
 
         <Route exact path="/login" element={<LoginSignUp />} />

@@ -13,8 +13,6 @@ const ProtectedRoute = ({ isAdmin, element: Element, ...rest }) => {
             )
             }
 
-
-
         </>
     )
 };
