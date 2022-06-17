@@ -28,7 +28,6 @@ import UpdateProduct from "./component/Product/UpdateProduct.js";
 import UsersList from "./component/Admin/UsersList.js";
 import UpdateUser from "./component/Admin/UpdateUser.js";
 import NewProduct from './component/Product/NewProduct';
-import Contact from './component/layout/Contact/Contact';
 import About from './component/layout/About/About';
 import NotFound from "./component/layout/NotFound/NotFound";
 
@@ -65,7 +64,6 @@ function App() {
         <Route exact path="/products" element={<Products />} />
         <Route path="/products/:keyword" element={<Products />} />
         <Route exact path="/search" element={<Search />} />
-        <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/about" element={<About />} />
 
 
