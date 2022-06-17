@@ -1,73 +1,9 @@
 .banner {
-  /* background-image: url("../../../images/cover.jfif"); */
-  background-color: rgb(116, 61, 224);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vmin;
-  text-align: center;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.banner p {
-  font: 300 3vmax "Lucida Sans";
-  padding: 2vmax;
-  position:absolute;
-  top:7vmax;
-  /* left:30vmax; */
-  font-weight: bolder;
-}
-
-.banner a {
-  text-decoration: none;
-}
-
-.banner a .btn_Scroll {
-  margin-bottom: 5vmax;
-  cursor: pointer;
-  font: 500 1vmax "Roboto", Arial, sans-serif;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 12px;
-  padding: 1vmax;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  width: 9vmax;
-}
-
-.banner a .btn_Scroll:hover {
-  background-color: rgba(255, 255, 255, 0);
-  color: white;
-}
-
-.banner a .btn_Scroll span {
-  margin: 0rem 1vmax;
-}
-
-.banner::after {
-  content: "";
-  width: 100vw;
-  height: 100vmin;
-  background-color: white;
-  position: absolute;
-  top: 0%;
-  left: 0;
-  -webkit-clip-path: polygon(100% 62%, 0% 100%, 100% 100%);
-          clip-path: polygon(100% 62%, 0% 100%, 100% 100%);
-  max-width: 100%;
+  margin-top: 10vh;
+  height: 60vh;
+  width: 60vmax;
+  margin:0.5vw auto;
+  align-items:center;
 }
 
 .homeHeading {
@@ -95,7 +31,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 2vmax auto;
+  margin: 1vmax auto;
   width: 80vw;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -206,23 +142,24 @@
 |            MEDIA QUERIES CSS                 |
 |______________________________________________|
 */
-@media screen and (max-width: 800px) {
-  .banner p {
-   font: 400 3.2vmax "Lucida Sans";
-   padding: 2vmax;
-   position:absolute;
-   top:9vmax;
-   font-weight: bolder
-  }
-  .banner a .btn_Scroll {
-    font: 760 1.8vmax "Roboto", Arial, sans-serif;
-    border-radius: 8px;
-    width: 19vmax;
-    height: 5vmax;
-  }
+@media screen and (max-width: 1000px) {
+
+  .banner {
+  height: 50vh;
+  width: 90vw;
+  margin:6vh auto 2vh;
+ }
+}
+@media screen and (max-width: 620px) {
+
   .container .productCard p {
     font-size: 1.7vmax;
   }
+  .banner {
+  height: 32vh;
+  width: 90vw;
+  margin:6vh auto 2vh;
+}
   .container .productCard div .stars {
     width: 15vmax;
   }

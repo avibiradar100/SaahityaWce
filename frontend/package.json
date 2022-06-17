@@ -20,6 +20,7 @@
     "chart.js": "^3.7.0",
     "core-js": "^3.20.2",
     "country-state-city": "^3.0.1",
+    "nuka-carousel": "^4.8.4",
     "overlay-navbar": "^1.0.4",
     "react": "^17.0.2",
     "react-alert": "^7.0.3",
@@ -64,5 +65,5 @@
       "last 1 safari version"
     ]
   },
-   "proxy": "http://127.0.0.1:4000"
+  "proxy": "http://127.0.0.1:4000"
 }
