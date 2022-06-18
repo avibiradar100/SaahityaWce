@@ -1,6 +1,5 @@
 # Saahitya
-This is a complete Application which helps students to sell the used aca
-demic material which is in good condition in college premises
+This is a complete Application which helps students to sell the used academic material which is in good condition in college premises
 
 ### <a href="" target="_blank">**Visit Now 🚀**</a>
 
