@@ -14,10 +14,10 @@
           justify-content: normal;
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   background-color: white;
   max-width: 100%;
-  top: 0%;
+  top: 11vh;
   left: 0%;
   z-index: 1;
 }
@@ -155,12 +155,17 @@
 |______________________________________________|
 
 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
   .profileContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  position: absolute;
+  background-color: white;
+  top: 7.5vh;
+  padding-top: 7.5vh;
+    
   }
   .innerDiv{
     padding-top: 2vmax;

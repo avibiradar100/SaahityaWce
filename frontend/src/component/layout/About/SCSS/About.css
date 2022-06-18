@@ -9,11 +9,6 @@
       grid-template-columns: 4fr 4fr;
 }
 
-.aboutSectionGradient {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#4e51ff), to(#4a89bd));
-  background-image: linear-gradient(to bottom right, #4e51ff, #4a89bd);
-}
-
 .aboutSectionContainer {
   position: absolute;
   left: 50%;
@@ -35,6 +30,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 2vh;
 }
 
 .aboutSectionContainer > h1 {

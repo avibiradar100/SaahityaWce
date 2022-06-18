@@ -4,7 +4,7 @@ import Carousel from 'nuka-carousel';
 
 const CarouselHome = () => {
   return (
-    <Carousel autoplay={true} autoplayInterval={2000} pauseOnHover={false} wrapAround={true}>
+    <Carousel autoplay={true} autoplayInterval={2000} pauseOnHover={false} wrapAround={true} dragging={true}>
       <img src="https://res.cloudinary.com/avicloud/image/upload/v1655474645/b1_jsoqoc.jpg" alt='1' />
       <img src="https://res.cloudinary.com/avicloud/image/upload/c_mfit,h_310/v1655478069/bg1_ayfdxw.png" alt='2' />
       <img src="https://res.cloudinary.com/avicloud/image/upload/v1655474644/b2_xyivsg.jpg" alt='3' />

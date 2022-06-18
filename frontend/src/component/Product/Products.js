@@ -57,7 +57,7 @@ const Products = () => {
 
     return (
         <>
-            {loading ? (<Loader />) : (<>
+            {loading ? (<Loader />) : (<div className='products'>
                 <MetaData title="Products" />
                 <h2 className="productsHeading">Products</h2>
                 <div className="container">
@@ -104,7 +104,7 @@ const Products = () => {
                     </div>
                 )}
 
-            </>)}
+            </div>)}
         </>
     )
 }

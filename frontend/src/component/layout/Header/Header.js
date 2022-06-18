@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar className="appbar" position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -31,7 +31,7 @@ const Header = () => {
             component="a"
             href="/"
             sx={{
-              mr: 5,
+              mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
@@ -72,16 +72,16 @@ const Header = () => {
               }}
             >
             <MenuItem key="Home" onClick={handleCloseNavMenu}>
-            <NavLink to="/" textAlign="center">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
             </MenuItem>
             <MenuItem key="Products" onClick={handleCloseNavMenu}>
-            <NavLink  to="/products" textAlign="center">Products</NavLink>
+            <NavLink  to="/products">Products</NavLink>
             </MenuItem>
             <MenuItem key="About" onClick={handleCloseNavMenu}>
-             <NavLink to="/about" textAlign="center">About</NavLink>
+             <NavLink to="/about">About</NavLink>
             </MenuItem>
             <MenuItem key="LoginSignup" onClick={handleCloseNavMenu}>
-             <NavLink to="/login" textAlign="center">Login / SignUp</NavLink>
+             <NavLink to="/login">Login / SignUp</NavLink>
             </MenuItem>
             </Menu>
           </Box>
@@ -93,7 +93,7 @@ const Header = () => {
             sx={{
               ml: 1,
               display: { xs: "flex", md: "none" },
-              flexGrow: 1,
+              flexGrow: 2,
               fontFamily: "monospace",
               fontWeight: 700,
               color: "inherit",
@@ -102,34 +102,30 @@ const Header = () => {
           >
             BestShop
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <NavLink
-              key="Home"
               to="/"
-              sx={{ ml:30,my: 2, color: "white", display: "block" }}
+              className={"first"}
             >
               Home
             </NavLink>
             <NavLink
-              key="Products"
               to="/products"
-              sx={{ mx:2,my: 2, color: "white", display: "block" }}
+              className={"navBarLink"}
             >
               Products
             </NavLink>
             <NavLink
-              key="contacts"
-              to='/contact'
-              sx={{ mx:2,my: 2, color: "white", display: "block" }}
-            >
-              Contact
-            </NavLink>
-            <NavLink
-              key="About"
               to="/about"
-              sx={{ mx:2,my: 2, color: "white", display: "block" }}
+              className={"navBarLink"}
             >
               About
+            </NavLink>
+            <NavLink
+              to="/login"
+              className={"navBarLink"}
+            >
+              Login / Signup
             </NavLink>
           </Box>
         </Toolbar>
