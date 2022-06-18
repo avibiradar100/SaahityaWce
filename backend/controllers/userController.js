@@ -198,7 +198,7 @@ exports.updatePassword=async(req,res)=>{
     }
 }
 
-exports.updatePofile=async(req,res)=>{
+exports.updateProfile=async(req,res)=>{
     try {
         const user=await User.findById(req.user._id);
 
