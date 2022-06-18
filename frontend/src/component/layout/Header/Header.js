@@ -11,8 +11,11 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import { NavLink } from "react-router-dom";
 import { BsSearch, BsFillCartCheckFill } from "react-icons/bs";
+import { useSelector} from 'react-redux';
 
 const Header = () => {
+
+  const {user} = useSelector((state) => state.user);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -92,9 +95,10 @@ const Header = () => {
               <BsFillCartCheckFill className="facebook1" />
               </NavLink>
             </MenuItem>
-            <MenuItem key="LoginSignup" onClick={handleCloseNavMenu}>
+            {!user ?(<MenuItem key="LoginSignup" onClick={handleCloseNavMenu}>
              <NavLink to="/login">Login / SignUp</NavLink>
-            </MenuItem>
+            </MenuItem>):(<></>)
+            }
             </Menu>
           </Box>
           <Typography
@@ -150,13 +154,15 @@ const Header = () => {
             >
               <BsFillCartCheckFill className="facebook" />
             </NavLink>
+            { !user ? (
             <NavLink
               key="LoginsignUp" 
               to="/login"
               className={"navBarLink"}
             >
               Login / Signup
-            </NavLink>
+            </NavLink>):(<></>)
+            }
           </Box>
         </Toolbar>
       </Container>
