@@ -80,7 +80,7 @@ const ProductDetails = () => {
                         
                         <div className="detailsBlock-3">
                             <h2>{`₹${product.price}`}</h2>
-                            <Button onClick={addToCartHandler} className='submitReview button'>Add to Cart</Button>
+                            <Button onClick={addToCartHandler} className='submitReview'>Add to Cart</Button>
                         </div>
 
                         <div className="detailsBlock-2">
@@ -99,7 +99,10 @@ const ProductDetails = () => {
                           <p>Email: {user.email}</p>
                         </div>
 
-                        <Button onClick={submitReviewToggle} className='submitReview button'>Chat With Owner</Button>
+                        <div className="detailsBlock-2">
+                          <h2>Intrested ?</h2>
+                          <Button onClick={submitReviewToggle} className='submitReview button'>Notify Owner</Button>
+                        </div>
 
                     </div>
                 </div>

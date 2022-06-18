@@ -5,7 +5,7 @@ body {
 .ProductDetails {
   width: 100wh;
   max-width: 100%;
-  padding: 6vmax;
+  padding: 2vmax;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -365,6 +365,9 @@ body {
    font-size: 2.0vmax;
    padding-bottom: 2vmax;
 }
+.ProductDetails .detailsBlock-3 {
+    align-items: center;
+  }
   .ProductDetails .detailsBlock-3 h2 {
     font: 700 3vmax "Franklin Gothic Medium";
     text-align: center;
@@ -409,7 +412,7 @@ body {
     font: 500 1.7vmax "Roboto";
     padding: 1.5vmax;
     width: 20vmax;
-    margin: 3vmax 0;
+    margin: 3vmax 3vmax;
   }
 }
 /*# sourceMappingURL=ProductDetails.css.map */
