@@ -17,7 +17,7 @@
   position: absolute;
   background-color: white;
   max-width: 100%;
-  top: 11vh;
+  top: 7vh;
   left: 0%;
   z-index: 1;
 }
@@ -163,7 +163,7 @@
             flex-direction: column;
   position: absolute;
   background-color: white;
-  top: 7.5vh;
+  top: 6.5vh;
   padding-top: 7.5vh;
     
   }

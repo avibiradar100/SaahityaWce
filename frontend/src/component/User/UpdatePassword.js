@@ -21,7 +21,7 @@ const UpdatePassword = () => {
 
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
 
     const updatePasswordSubmit = (e) => {
@@ -31,7 +31,7 @@ const UpdatePassword = () => {
 
         myForm.set("oldPassword", oldPassword);
         myForm.set("newPassword", newPassword);
-        myForm.set("confirmPassword", confirmPassword);
+        myForm.set("confirmNewPassword", confirmNewPassword);
         dispatch(updatePassword(myForm));
     };
 
@@ -84,8 +84,8 @@ const UpdatePassword = () => {
 
                                 <div className="loginPassword">
                                     <LockIcon />
-                                    <input type="password" placeholder="Confirm Password" required value={confirmPassword}
-                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                    <input type="password" placeholder="Confirm Password" required value={confirmNewPassword}
+                                        onChange={(e) => setConfirmNewPassword(e.target.value)}
                                     />
                                 </div>
 
