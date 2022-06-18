@@ -20,6 +20,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 2;
+  margin-top: 10vh;
 }
 
 .updateProfileContainer .updateProfileBox {
@@ -172,6 +173,8 @@
 @media screen and (max-width: 600px) {
   .updateProfileContainer {
     background-color: white;
+    margin-top: 7vh;
+    z-index: 2;
   }
   .updateProfileContainer .updateProfileBox {
     width: 100vw;
