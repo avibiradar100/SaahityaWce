@@ -55,7 +55,7 @@ const ResetPassword = () => {
         <>
             {loading ? (<Loader />) : (
                 <>
-                    <MetaData title="Reset Password -- BestShop" />
+                    <MetaData title="Reset Password -- Saahitya" />
                     <div className="resetPasswordContainer">
                         <div className="resetPasswordBox">
                             <h2 className="resetPasswordHeading">Reset Password </h2>

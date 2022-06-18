@@ -24,14 +24,13 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        default: "admin"
+        default: "user"
     },
 
     password: {
         type: String,
         required: [true, "Please enter your password"],
-        minlength: [6, "password should have more than 6 characters"],
-        select: false
+        minlength: [6, "password should have more than 6 characters"]
     },
 
     avatar: {

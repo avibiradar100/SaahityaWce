@@ -105,7 +105,7 @@ const LoginSignUp = () => {
     return (
         <>
             {loading ? <Loader /> : <>
-                <MetaData title="LoginSignUp -- Wcekart" />
+                <MetaData title="LoginSignUp --Saahitya" />
                 <div className="LoginSignUpContainer">
                 <div className="LoginSignUpBox">
                     <div>

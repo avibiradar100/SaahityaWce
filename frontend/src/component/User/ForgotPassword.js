@@ -46,7 +46,7 @@ const ForgotPassword = () => {
         <>
             {loading ? (<Loader />) : (
                 <>
-                    <MetaData title="Forgot Password -- BestShop" />
+                    <MetaData title="Forgot Password -- Saahitya" />
                     <div className="forgotPasswordContainer">
                         <div className="forgotPasswordBox">
                             <h2 className="forgotPasswordHeading">Forgot Password</h2>

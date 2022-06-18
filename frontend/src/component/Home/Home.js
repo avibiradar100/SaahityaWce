@@ -28,7 +28,7 @@ const Home = () => {
         <>
             {loading ? <Loader/> :
                 <>
-                    <MetaData title="Wcekart" />
+                    <MetaData title="Saahitya" />
                     <div className='banner'>
                         <CarouselHome/>
                     </div>

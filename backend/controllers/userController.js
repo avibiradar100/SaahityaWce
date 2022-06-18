@@ -213,11 +213,13 @@ exports.updateProfile=async(req,res)=>{
         if(phone){
              user.phone=phone
         }
-        if (avatar) {
+        if (avatar !== "") {
             await cloudinary.v2.uploader.destroy(user.avatar.public_id);
         
             const myCloud = await cloudinary.v2.uploader.upload(avatar, {
                     folder: "avatars",
+                    width: 150,
+                    crop: "scale",
             });
 
             user.avatar.public_id = myCloud.public_id;
@@ -315,7 +317,7 @@ exports.getUserProfile=async(req,res)=>{
 }
 
 exports.getAllUsers=async(req,res)=>{
-     try {
+    try {
         const users=await User.find({});
         
         res.status(200).json({
@@ -413,3 +415,63 @@ exports.resetPassword=async(req,res)=>{
         })
     }
 }
+
+//Admin Update Users Profile
+exports.updateUserRole = async (req, res, next) => {
+    try {
+        const newUserData = {
+            name: req.body.name,
+            email: req.body.email,
+            phone:req.body.phone,
+            password:req.body.password,
+            role:req.body.role,
+        };
+
+        await User.findByIdAndUpdate(req.params.id, newUserData, {
+            new: true,
+            runValidators: true,
+        });
+
+        res.status(200).json({
+            success: true,
+            message: "Admin Updated User Role Successfully"
+        });
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:error.message
+        })
+    }
+};
+
+// admin delete user profile
+
+exports.deleteUser = async (req, res, next) => {
+    try {
+        
+        const user = await User.findById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({
+                success:false,
+                message:"User Not Found" 
+            })
+        }
+
+        const imageId = user.avatar.public_id;
+
+        await cloudinary.uploader.destroy(imageId);
+
+        await user.remove();
+
+        res.status(200).json({
+            success: true,
+            message: "User Deleted Successfully",
+        });
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:error.message
+        })
+    }
+};

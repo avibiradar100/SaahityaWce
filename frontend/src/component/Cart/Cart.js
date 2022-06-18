@@ -26,7 +26,7 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <MetaData title={`Cart-Section -- BestShop`} />
+          <MetaData title={`Cart-Section -- Saahitya`} />
           <div className="cartPage">
             <div className="cartHeader">
               <p>Product</p>

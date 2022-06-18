@@ -55,7 +55,7 @@ const ProductDetails = () => {
     return (
         <>
             {loading ? <Loader /> : (<>
-                <MetaData title={`${product.name} -- BestShop`} />
+                <MetaData title={`${product.name} -- Saahitya`} />
                 <div className='ProductDetails'>
                     <div>
                         <Carousel>

@@ -44,7 +44,7 @@ const Header = () => {
               textDecoration: "none"
             }}
           >
-            BestShop
+            <h1>Saahitya</h1>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -116,7 +116,7 @@ const Header = () => {
               textDecoration: "none"
             }}
           >
-            BestShop
+           <h1>Saahitya</h1>
           </Typography>
           <Box sx={{flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <NavLink

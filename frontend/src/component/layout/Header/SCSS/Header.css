@@ -4,6 +4,12 @@
   z-index: 2;
 }
 
+h1{
+  font-size: 2vmax;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #fcfcfc;
+}
+
 .speedDial {
   position: absolute;
   right: 3vmax;
@@ -222,6 +228,11 @@ li {
 |______________________________________________|
 */
 @media (max-width: 800px) {
+  h1{
+  font-size: 3vmax;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #fcfcfc;
+}
   .menu-link ul li {
     font-size: 2vmax !important;
   }

@@ -59,7 +59,7 @@ const UpdatePassword = () => {
         <>
             {loading ? (<Loader />) : (
                 <>
-                    <MetaData title="Update Password -- BestShop" />
+                    <MetaData title="Update Password -- Saahitya" />
                     <div className="updatePasswordContainer">
                         <div className="updatePasswordBox">
                             <h2 className="updatePasswordHeading">Update Password</h2>

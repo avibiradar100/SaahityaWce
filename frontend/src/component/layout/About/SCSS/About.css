@@ -74,9 +74,8 @@
 
 .aboutSectionContainer > div > div > span {
   font: 100 1vmax "Roboto";
-  color: rgba(0, 0, 0, 0.616);
-  text-align: center;
-  width: 80%;
+  color: rgba(0, 0, 0, 0.939);
+  width: 60%;
 }
 
 .aboutSectionContainer2 {
@@ -86,11 +85,15 @@
 .aboutSectionContainer2 > h2 {
   color: rgba(0, 0, 0, 0.623);
   font: 100 2vmax "Roboto";
-  margin: 2vmax;
+  margin: 0 2vmax;
 }
 
-.aboutSectionContainer2 > a > svg {
+.aboutSectionContainer2 >span{
+  margin-left: 5vw;
+}
+.aboutSectionContainer2 >span > a > svg {
   font-size: 4vmax;
+  margin: 1vmax 2vmax;
 }
 
 .twitterSvgIcon {
@@ -108,6 +111,9 @@
 |______________________________________________|
 */
 @media screen and (max-width: 600px) {
+  .aboutSectionContainer2 >span{
+    margin-left: 9vmax;
+  }
   .aboutSectionContainer > div {
     display: block;
   }

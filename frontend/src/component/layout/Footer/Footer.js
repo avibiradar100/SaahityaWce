@@ -18,10 +18,10 @@ const Footer = () => {
             </div>
 
             <div className="midFooter">
-                <h1>BestShop</h1>
-                <p>High Quality is our first priority</p>
+                <h1>Saahitya</h1>
+                <p>Education is our first priority</p>
 
-                <p>Copyrights {new Date().getFullYear()} &copy; BestShop</p>
+                <p>Copyrights {new Date().getFullYear()} &copy; Saahitya</p>
             </div>
 
             <div className="rightFooter">
