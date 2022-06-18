@@ -1,4 +1,5 @@
 import * as React from "react";
+import './SCSS/Header.css'
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,6 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import { NavLink } from "react-router-dom";
+import { BsSearch, BsFillCartCheckFill } from "react-icons/bs";
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -68,7 +70,7 @@ const Header = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" }
+                display: { xs: "block", md: "none"}
               }}
             >
             <MenuItem key="Home" onClick={handleCloseNavMenu}>
@@ -79,6 +81,16 @@ const Header = () => {
             </MenuItem>
             <MenuItem key="About" onClick={handleCloseNavMenu}>
              <NavLink to="/about">About</NavLink>
+            </MenuItem>
+             <MenuItem key="Search" onClick={handleCloseNavMenu}>
+             <NavLink to="/search">
+              <BsSearch className="facebook1" />
+             </NavLink>
+            </MenuItem>
+            <MenuItem key="Cart" onClick={handleCloseNavMenu}>
+              <NavLink to="/cart">
+              <BsFillCartCheckFill className="facebook1" />
+              </NavLink>
             </MenuItem>
             <MenuItem key="LoginSignup" onClick={handleCloseNavMenu}>
              <NavLink to="/login">Login / SignUp</NavLink>
@@ -104,24 +116,42 @@ const Header = () => {
           </Typography>
           <Box sx={{flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <NavLink
+              key="Home" 
               to="/"
               className={"first"}
             >
               Home
             </NavLink>
             <NavLink
+              key="Products" 
               to="/products"
               className={"navBarLink"}
             >
               Products
             </NavLink>
             <NavLink
+              key="About" 
               to="/about"
               className={"navBarLink"}
             >
               About
             </NavLink>
+             <NavLink
+              key="Search" 
+              to="/search"
+              className={"navBarLink"}
+            >
+              <BsSearch className="facebook" />
+            </NavLink>
             <NavLink
+              key="Cart" 
+              to="/cart"
+              className={"navBarLink"}
+            >
+              <BsFillCartCheckFill className="facebook" />
+            </NavLink>
+            <NavLink
+              key="LoginsignUp" 
               to="/login"
               className={"navBarLink"}
             >

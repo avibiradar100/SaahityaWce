@@ -80,36 +80,6 @@ li {
   transition: all 0.5s ease 0s;
 }
 
-.menuBurger {
-  width: 3vmax;
-  height: 2.5vmax;
-  position: fixed;
-  top: 2vmax;
-  left: 2vmax;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-  padding: 1vmax;
-  overflow: hidden;
-  z-index: 1000;
-}
-
-.menuBurger a {
-  font-size: 3vmax;
-  color: #000069;
-}
-
 .menu-link {
   width: 50%;
 }
@@ -171,22 +141,6 @@ li {
 }
 
 /* ----------- Grid part ends ----------------- */
-.logo {
-  width: 25%;
-}
-
-.logo img {
-  cursor: pointer;
-  width: 20vmax;
-  height: unset;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-  -webkit-animation: 1s ease 0s 1 normal none running LogoleftIn;
-          animation: 1s ease 0s 1 normal none running LogoleftIn;
-  -webkit-filter: none;
-          filter: none;
-}
-
 .menu-link ul li {
   font-size: 1.3vmax;
   margin: 1rem;
@@ -218,11 +172,17 @@ li {
 }
 
 .facebook {
-  color: rgba(35, 35, 35, 0.8);
+  color: rgb(255, 255, 255);
   width: 3vmax;
+  height: 3.5vh;
+}
+.facebook1 {
+  color: tomato;
+  width: 4vmax;
+  height: 4vh;
 }
 
-.facebook:hover {
+.facebook:hover{
   color: tomato;
 }
 
