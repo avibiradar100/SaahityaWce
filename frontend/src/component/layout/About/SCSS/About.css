@@ -73,8 +73,8 @@
 }
 
 .aboutSectionContainer > div > div > span {
-  font: 100 1vmax "Roboto";
-  color: rgba(0, 0, 0, 0.939);
+  font: 100 1.5vmax "Roboto";
+  color: rgba(0, 0, 0, 0.768);
   width: 60%;
 }
 

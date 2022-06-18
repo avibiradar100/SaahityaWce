@@ -15,6 +15,7 @@ import {
 } from "../../actions/userAction";
 import Loader from "../layout/Loader/Loader";
 import { useNavigate, useParams } from "react-router-dom";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 const UpdateUser = () => {
     const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const UpdateUser = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [role, setRole] = useState("");
+    const [phone, setPhone] = useState("");
 
     const userId = id;
 
@@ -46,6 +48,7 @@ const UpdateUser = () => {
             setName(user.name);
             setEmail(user.email);
             setRole(user.role);
+            setPhone(user.phone);
         }
         if (error) {
             alert.error(error);
@@ -72,6 +75,7 @@ const UpdateUser = () => {
         myForm.set("name", name);
         myForm.set("email", email);
         myForm.set("role", role);
+        myForm.set("phone", phone);
 
         dispatch(updateUser(userId, myForm));
     };
@@ -109,6 +113,16 @@ const UpdateUser = () => {
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                             <div className="updateProfileEmail">
+                                <PhoneIcon />
+                                <input
+                                    type="text"
+                                    placeholder="Phone"
+                                    required
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
                                 />
                             </div>
 

@@ -203,7 +203,7 @@ exports.updateProfile=async(req,res)=>{
         const user=await User.findById(req.user._id);
 
         const {name,phone,email,avatar}=req.body;
-
+        
         if(name){
              user.name=name
         }
@@ -423,7 +423,6 @@ exports.updateUserRole = async (req, res, next) => {
             name: req.body.name,
             email: req.body.email,
             phone:req.body.phone,
-            password:req.body.password,
             role:req.body.role,
         };
 
@@ -449,21 +448,31 @@ exports.updateUserRole = async (req, res, next) => {
 exports.deleteUser = async (req, res, next) => {
     try {
         
-        const user = await User.findById(req.params.id);
+        const user=await User.findById(req.params.id);
+        const totproducts=user.products;
 
-        if (!user) {
-            return res.status(404).json({
-                success:false,
-                message:"User Not Found" 
-            })
+        //Remove avatar data from cloudinary
+        await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+
+
+        // logout user if it is admin 
+        if(user.role==='admin'){
+             const options={
+                expires:new Date(Date.now()),
+                httpOnly:true    
+            }
+            res.cookie("token",null,options);
         }
-
-        const imageId = user.avatar.public_id;
-
-        await cloudinary.uploader.destroy(imageId);
 
         await user.remove();
 
+        //delete all products of user
+        for(let i=0;i<totproducts.length;i++){
+            const product=await Product.findById(totproducts[i]);
+            for(let j=0;j<product.images.length;j++)
+                await cloudinary.v2.uploader.destroy(product.images[j].public_id);
+            await product.remove();
+        }   
         res.status(200).json({
             success: true,
             message: "User Deleted Successfully",

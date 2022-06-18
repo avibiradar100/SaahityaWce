@@ -8,7 +8,7 @@ import MetaData from "../layout/MetaData";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
-import { getAllUsers, clearErrors, deleteUser } from "../../actions/userAction";
+import { getAllUsers, clearErrors, deleteUser} from "../../actions/userAction";
 import { DELETE_USER_RESET } from "../../constants/userConstants";
 
 const UsersList = () => {
@@ -19,6 +19,7 @@ const UsersList = () => {
     const navigate = useNavigate();
 
     const { error, users } = useSelector((state) => state.allUsers);
+     const {user} = useSelector((state) => state.user);
 
     const {
         error: deleteError,
@@ -26,7 +27,7 @@ const UsersList = () => {
         message,
     } = useSelector((state) => state.profile);
 
-    const deleteUserHandler = (id) => {
+    const deleteUserHandler = async(id) => {
         dispatch(deleteUser(id));
     };
 
@@ -43,27 +44,32 @@ const UsersList = () => {
 
         if (isDeleted) {
             alert.success(message);
-            navigate("/admin/users");
+            if(user.isAuthenticated==='true')
+                navigate("/admin/users");
+            else
+                navigate("/login");
             dispatch({ type: DELETE_USER_RESET });
         }
-
         dispatch(getAllUsers());
-    }, [dispatch, alert, error, deleteError, navigate, isDeleted, message]);
+    }, [dispatch, alert, error,user,deleteError, navigate, isDeleted, message]);
 
     const columns = [
-        { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
+        { field: "id", headerName: "User ID", minWidth: 170, flex: 0.1 },
 
         {
             field: "email",
             headerName: "Email",
             minWidth: 200,
-            flex: 1,
         },
         {
             field: "name",
             headerName: "Name",
             minWidth: 150,
-            flex: 0.5,
+        },
+        {
+            field: "phone",
+            headerName: "Phone",
+            minWidth: 150,
         },
 
         {
@@ -71,7 +77,6 @@ const UsersList = () => {
             headerName: "Role",
             type: "number",
             minWidth: 150,
-            flex: 0.3,
             cellClassName: (params) => {
                 return params.getValue(params.id, "role") === "admin"
                     ? "greenColor"
@@ -81,7 +86,6 @@ const UsersList = () => {
 
         {
             field: "actions",
-            flex: 0.3,
             headerName: "Actions",
             minWidth: 150,
             type: "number",
@@ -114,6 +118,7 @@ const UsersList = () => {
                 id: item._id,
                 role: item.role,
                 email: item.email,
+                phone:item.phone,
                 name: item.name,
             });
         });

@@ -216,6 +216,7 @@ export const getUserDetails = (id) => async (dispatch) => {
 // Update User
 export const updateUser = (id, userData) => async (dispatch) => {
   try {
+    console.log(userData);
     dispatch({ type: UPDATE_USER_REQUEST });
 
     const config = { headers: { "Content-Type": "application/json" } };

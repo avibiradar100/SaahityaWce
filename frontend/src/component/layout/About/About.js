@@ -17,7 +17,7 @@ const About = () => {
 
                 <div>
                     <div>
-                        <h3>Saahitya</h3><br/>
+                        <h2>Saahitya</h2><br/>
                         <span>
                              This is a complete application which helps students to sell the used academic material which is in good condition in college premise
                         </span>
@@ -26,7 +26,7 @@ const About = () => {
                         <div>
                         <Avatar
                             style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-                            src="https://res.cloudinary.com/avicloud/image/upload/v1655561303/myphoto_onive1.jpg"
+                            src="https://res.cloudinary.com/avicloud/image/upload/v1655572278/avatars/myphoto_rgqyxx.jpg"
                             alt="Founder"
                         />
                         <h3>Avinash Biradar</h3><br/>
