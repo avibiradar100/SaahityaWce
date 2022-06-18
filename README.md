@@ -4,7 +4,7 @@ This is a complete Application which helps students to sell the used academic ma
 ### <a href="" target="_blank">**Visit Now 🚀**</a>
 
 
-## Things I Implemented
+## Things Implemented
 1. SignIn/SignUp
 2. Product Searching
 3. Add to Cart Items
