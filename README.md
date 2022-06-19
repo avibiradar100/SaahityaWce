@@ -29,7 +29,21 @@ This is a complete Application which helps students to sell the used academic ma
 
 ## ScreenShot
 
-![Alt text](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/1_nl0hkq.png)
+![1](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/1_nl0hkq.png)
+![2](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/2_i1qdmj.png)
+![3](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/3_mrwd3b.png)
+![4](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/4_grppjs.png)
+![5](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/5_lgcbvw.png)
+![6](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/6_imc449.png)
+![7](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/7_badsd9.png)
+![8](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/8_tqvwlf.png)
+![9](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/9_oe5imj.png)
+![10](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/10_f7kbph.png)
+![11](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/11_y5gzgm.png)
+![12](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/15_p3lr2t.png)
+![13](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/12_euyzul.png)
+![14](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/13_rwodq6.png)
+![15](https://res.cloudinary.com/avicloud/image/upload/v1655638076/project%20Images/14_ous2qw.png)
 
 
 
