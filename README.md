@@ -29,7 +29,7 @@ This is a complete Application which helps students to sell the used academic ma
 
 ## ScreenShot
 
-
+![Alt text](https://res.cloudinary.com/avicloud/image/upload/v1655638075/project%20Images/1_nl0hkq.png)
 
 
 
