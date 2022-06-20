@@ -12,6 +12,7 @@ import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { loadUser} from '../../actions/userAction';
 import "./SCSS/NewProduct/NewProduct.css";
+import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
 
 const NewProduct = () => {
 
@@ -38,6 +39,7 @@ const NewProduct = () => {
             alert.success("Product Created Successfully");
             dispatch(loadUser());
             navigate(`/product/${product._id}`);
+            dispatch({type: NEW_PRODUCT_RESET});
         }
     }, [dispatch, alert, error, success, product,navigate]);
 
