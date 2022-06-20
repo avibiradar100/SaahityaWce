@@ -23,7 +23,7 @@ const NewProduct = () => {
     const { loading, error, success,product} = useSelector((state) => state.newProduct);
 
     const [name, setName] = useState("");
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
     const [images, setImages] = useState([]);
@@ -109,6 +109,7 @@ const NewProduct = () => {
                             <input
                                 type="number"
                                 placeholder="Price"
+                                value={price}
                                 name="price"
                                 required
                                 onChange={(e) => setPrice(e.target.value)}
@@ -120,8 +121,8 @@ const NewProduct = () => {
 
                             <textarea
                                 placeholder="Product Description"
-                                value={description}
                                 name="description"
+                                value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 cols="30"
                                 rows="1"
@@ -137,12 +138,13 @@ const NewProduct = () => {
                                 onChange={(e) => setCategory(e.target.value)}
                             />
                         </div>
-
+                        <p>Select 1 or multiple product images </p>
                         <div id="createProductFormFile">
                             <input
                                 type="file"
                                 name="avatar"
                                 accept="image/*"
+                                required
                                 onChange={createProductImagesChange}
                                 multiple
                             />

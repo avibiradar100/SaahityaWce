@@ -213,7 +213,7 @@ exports.updateProfile=async(req,res)=>{
         if(phone){
              user.phone=phone
         }
-        if (avatar !== "") {
+        if (avatar) {
             await cloudinary.v2.uploader.destroy(user.avatar.public_id);
         
             const myCloud = await cloudinary.v2.uploader.upload(avatar, {

@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "./CSS/Header.css";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
 import Backdrop from "@material-ui/core/Backdrop";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import AddIcon from "@material-ui/icons/Add";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from '../../../actions/userAction';
+import { logoutUser,deleteMyProfile } from '../../../actions/userAction';
 import '../../../images/Profile.png'
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SyncLockIcon from '@mui/icons-material/SyncLock';
 
 const UserOptions = ({ user }) => {
 
@@ -21,9 +23,24 @@ const UserOptions = ({ user }) => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
+    const {error,isAuthenticated } = useSelector((state) => state.user);
+
+    useEffect(() => {
+        if (error) {
+            alert.error(error);
+        }
+
+        if (isAuthenticated === false) {
+            navigate("/login");
+        }
+        
+    }, [navigate,alert,error,isAuthenticated]);
+
     const options = [
-        { icon: <AddIcon />, name: "Create Product", func: add },
         { icon: <PersonIcon />, name: "Profile", func: account },
+        { icon: <EditIcon />, name: "update Profile", func: update },
+        { icon: <SyncLockIcon />, name: "Change Password", func: change },
+        { icon: <DeleteIcon />, name: "Delete Profile", func: deleteProfile },
         { icon: <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}} />, name: `Cart(${cartItems.length})`, func: cart },
         { icon: <ExitToAppIcon />, name: "Logout", func: logoutuser },
     ];
@@ -41,12 +58,19 @@ const UserOptions = ({ user }) => {
     function dashboard() {
         navigate("/admin/dashboard");
     }
-
-    function add() {
-        navigate("/create/product");
-    }
     function account() {
         navigate("/account");
+    }
+    function update() {
+        navigate("/me/update");
+    }
+    function change() {
+        navigate("/password/update");
+    }
+    async function  deleteProfile() {
+        await dispatch(deleteMyProfile());
+        await dispatch(logoutUser());
+        alert.success("Deleted  Successfully");
     }
     function cart() {
         navigate("/cart");

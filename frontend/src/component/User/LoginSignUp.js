@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Loader from "../layout/Loader/Loader";
-import { Link, useNavigate, useLocation  } from "react-router-dom";
+import {useNavigate, useLocation  } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
@@ -54,7 +54,6 @@ const LoginSignUp = () => {
         e.preventDefault();
         await dispatch(register(name,email,password,phone,avatar));
         dispatch(loadUser());
-        alert.info("Click on Your Right-Top profile icon to add Products..");
     }
 
     const registerDataChange = (e) => {
@@ -130,7 +129,7 @@ const LoginSignUp = () => {
                                 onChange={(e) => setLoginPassword(e.target.value)}
                             />
                         </div>
-                        <Link to="/password/forgot">Forget Password ?</Link>
+                        {/* <Link to="/password/forgot">Forget Password ?</Link> */}
                         <input type="submit" value="Login" className="loginBtn" />
                     </form>
 
@@ -174,7 +173,8 @@ const LoginSignUp = () => {
                         <div id="registerImage">
                             <img src={avatarPreview} alt="Avatar Preview" />
                             <input
-                                type="file"
+                               type="file"
+                                required
                                 name="avatar"
                                 accept="image/*"
                                 onChange={registerDataChange}

@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
-import { useDispatch,useSelector } from "react-redux";
+import {useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
 import Loader from "../layout/Loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
 // import { Button } from "@mui/material";
 import { useAlert } from "react-alert";
 import "./CSS/Profile/Profile.css";
-import { logoutUser, deleteMyProfile } from "../../actions/userAction";
 
 const Profile = () => {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const alert = useAlert();
     const { user, loading, error,isAuthenticated } = useSelector((state) => state.user);
@@ -25,13 +23,6 @@ const Profile = () => {
         
     }, [navigate,alert,error,isAuthenticated]);
 
-    const deleteProfileHandler = async() => {
-        await dispatch(deleteMyProfile());
-        await dispatch(logoutUser());
-        alert.success("Deleted  Successfully");
-    };
-
-
     return (
         <>
             {loading ? (<Loader />) :
@@ -42,10 +33,6 @@ const Profile = () => {
                             <div className='profileTop'>
                                 <h1>My Profile</h1>
                                 <img src={user.avatar.url} alt={user.name} />
-                                <Link to="/me/update">Edit Profile</Link>
-                                 <button onClick={deleteProfileHandler}>
-                                    Delete my profile
-                                </button>
                             </div>
 
                             <div>
@@ -70,10 +57,9 @@ const Profile = () => {
                                     <p>{String(user.createdAt).substr(0, 10)}</p>
                                 </div>
                                 <div>
-                                    <Link to="/my/products">My Products</Link>
-                                    <Link to="/password/update">Change Password</Link>
+                                    <Link to="/create/product">Add New Product</Link>
+                                    <Link to="/my/products">My Products</Link> 
                                 </div>
-
                             </div>
 
                         </div>

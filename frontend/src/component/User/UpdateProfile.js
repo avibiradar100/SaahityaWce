@@ -130,6 +130,7 @@ const UpdateProfile = () => {
                     type="file"
                     name="avatar"
                     accept="image/*"
+                    value={avatar}
                     onChange={updateProfileDataChange}
                   />
                 </div>
