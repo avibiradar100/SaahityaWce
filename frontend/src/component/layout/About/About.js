@@ -1,9 +1,9 @@
 import React from "react";
-import { Typography, Avatar } from "@material-ui/core";
+import { Typography} from "@material-ui/core";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import GitHubIcon from '@mui/icons-material/GitHub';
 import "./SCSS/About.css";
 import MetaData from "../MetaData";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const About = () => {
     return (
@@ -18,21 +18,15 @@ const About = () => {
                 <div>
                     <div>
                         <h2>Saahitya</h2><br/>
-                        <span>
+                        <p>
                              This is a complete application which helps students to sell the used academic material which is in good condition in college premise
-                        </span>
+                        </p>
                     </div>
                     <div className="aboutSectionContainer2">
-                        <div>
-                        <Avatar
-                            style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-                            src="https://res.cloudinary.com/avicloud/image/upload/v1655572278/avatars/myphoto_rgqyxx.jpg"
-                            alt="Founder"
-                        />
                         <h3>Avinash Biradar</h3><br/>
-                    </div>
+                        <span>Walchand College Of Engineering,Sangli.</span>
                         <Typography component="h2">Get In Touch</Typography>
-                         <span>
+                        <div className="social">
                             <a
                             href="https://twitter.com/avi_biradar77"
                             target="blank"
@@ -40,10 +34,10 @@ const About = () => {
                                 <TwitterIcon className="twitterSvgIcon" />
                             </a>
 
-                            <a href="https://github.com/avibiradar100" target="blank">
-                                <GitHubIcon className="gitHubSvgIcon" />
+                            <a href="https://www.linkedin.com/in/avinash-biradar-9279241aa/" target="blank">
+                                <LinkedInIcon className="gitHubSvgIcon" />
                             </a>
-                         </span>
+                        </div>
                     </div>
                 </div>
             </div>

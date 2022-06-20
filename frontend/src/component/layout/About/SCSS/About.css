@@ -66,6 +66,7 @@
 .aboutSectionContainer > div > div > p {
   color: rgba(0, 0, 0, 0.623);
   font: 100 1vmax "Roboto";
+  margin-left: 6vmax;
 }
 
 .aboutSectionContainer > div > div > button {
@@ -82,16 +83,11 @@
   border-left: 1px solid rgba(0, 0, 0, 0.116);
 }
 
-.aboutSectionContainer2 > h2 {
-  color: rgba(0, 0, 0, 0.623);
-  font: 100 2vmax "Roboto";
-  margin: 0 2vmax;
-}
-
 .aboutSectionContainer2 >span{
   margin-left: 5vw;
+  margin-bottom: 5vw;
 }
-.aboutSectionContainer2 >span > a > svg {
+.aboutSectionContainer2 >.social > a > svg {
   font-size: 4vmax;
   margin: 1vmax 2vmax;
 }
@@ -112,7 +108,8 @@
 */
 @media screen and (max-width: 600px) {
   .aboutSectionContainer2 >span{
-    margin-left: 9vmax;
+    margin-left: 3vmax;
+    width: 80%;
   }
   .aboutSectionContainer > div {
     display: block;
@@ -124,18 +121,17 @@
   .aboutSectionContainer > div > div > p {
     font: 100 2vmax "Roboto";
   }
-  .aboutSectionContainer > div > div > span {
-    font: 100 1.4vmax "Roboto";
-    width: 70%;
-  }
   .aboutSectionContainer2 {
-    border-left: none;
+    margin-top: 9vmax;
   }
   .aboutSectionContainer2 > h2 {
     font: 100 3vmax "Roboto";
     margin: 2vmax;
   }
-  .aboutSectionContainer2 > a > svg {
+  .aboutSectionContainer2 >.social{
+    margin-left: -7vw;
+  }
+  .aboutSectionContainer2 >.social a > svg {
     font-size: 6vmax;
     margin: 1vmax;
   }
