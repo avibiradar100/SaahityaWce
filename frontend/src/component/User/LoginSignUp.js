@@ -48,6 +48,8 @@ const LoginSignUp = () => {
         dispatch(loadUser());
     }
 
+    
+
     const registerSubmit =async (e) => {
         e.preventDefault();
         await dispatch(register(name,email,password,phone,avatar));

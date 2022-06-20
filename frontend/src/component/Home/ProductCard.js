@@ -15,11 +15,11 @@ const ProductCard = ({ product }) => {
   const alert = useAlert();
   const navigate = useNavigate();
 
-  const { isAuthenticated,error,user} = useSelector(
+  const { isAuthenticated,user} = useSelector(
     (state) => state.user
   );
 
-  const { error: deleteError,isDeleted } = useSelector((state) => state.product);
+  const {error, error: deleteError,isDeleted } = useSelector((state) => state.product);
 
   const deleteProductHandler = async() => {
     dispatch(deleteProduct(product._id));
