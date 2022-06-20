@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, forgotPassword } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
-import "./SCSS/ForgotPassword/ForgotPassword.css";
+import "./CSS/ForgotPassword/ForgotPassword.css";
 
 
 const ForgotPassword = () => {

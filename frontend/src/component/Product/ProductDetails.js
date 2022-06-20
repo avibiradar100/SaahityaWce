@@ -10,7 +10,7 @@ import { addItemsToCart } from "../../actions/cartAction";
 import {
     Button,
 } from "@material-ui/core";
-import './SCSS/ProductDetails/ProductDetails.css';
+import './CSS/ProductDetails/ProductDetails.css';
 
 
 const ProductDetails = () => {

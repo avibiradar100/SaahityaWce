@@ -4,8 +4,7 @@ import AppStore from "../../../images/Appstore.png";
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-// import TwitterIcon from '@mui/icons-material/Twitter';
-import "./SCSS/Fotter.css";
+import "./CSS/Fotter.css";
 
 const Footer = () => {
     return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MetaData from "../layout/MetaData";
-import "./SCSS/Search/Search.css";
+import "./CSS/Search/Search.css";
 
 const Search = () => {
 

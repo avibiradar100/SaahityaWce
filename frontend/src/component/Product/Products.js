@@ -8,7 +8,7 @@ import Pagination from "react-js-pagination";
 import ProductCard from '../Home/ProductCard';
 import Loader from '../layout/Loader/Loader.js';
 import MetaData from "../layout/MetaData";
-import './SCSS/Products/Product.css';
+import './CSS/Products/Product.css';
 
 
 

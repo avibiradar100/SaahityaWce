@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import ProductCard from '../Home/ProductCard';
 import Loader from '../layout/Loader/Loader.js';
 import MetaData from "../layout/MetaData";
-import './SCSS/MyProducts.css';
+import './CSS/MyProducts.css';
 
 const MyProducts = () => {
     const alert = useAlert();

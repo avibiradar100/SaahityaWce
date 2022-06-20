@@ -9,7 +9,7 @@ import LockIcon from "@material-ui/icons/Lock";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstants";
 import MetaData from "../layout/MetaData";
-import "./SCSS/UpdatePassword/UpdatePassword.css";
+import "./CSS/UpdatePassword/UpdatePassword.css";
 
 
 const UpdatePassword = () => {

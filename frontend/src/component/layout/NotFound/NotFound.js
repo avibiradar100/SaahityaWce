@@ -1,6 +1,6 @@
 import React from "react";
 import ErrorIcon from "@material-ui/icons/Error";
-import "./SCSS/NotFound.css";
+import "./CSS/NotFound.css";
 import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 

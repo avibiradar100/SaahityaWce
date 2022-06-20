@@ -6,7 +6,7 @@ import { Typography } from "@material-ui/core";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { removeItemsFromCart } from "../../actions/cartAction.js";
 import { Link } from "react-router-dom";
-import "./SCSS/Cart/Cart.css";
+import "./CSS/Cart/Cart.css";
 
 const Cart = () => {
   const dispatch = useDispatch();

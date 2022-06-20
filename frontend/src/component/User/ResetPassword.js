@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
 import MetaData from "../layout/MetaData";
-import "./SCSS/ResetPassword/ResetPassword.css";
+import "./CSS/ResetPassword/ResetPassword.css";
 
 
 const ResetPassword = () => {

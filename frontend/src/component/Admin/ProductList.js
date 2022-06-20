@@ -13,7 +13,7 @@ import MetaData from "../layout/MetaData";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
-import "./SCSS/ProductList/ProductList.css";
+import "./CSS/ProductList/ProductList.css";
 import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
 
 const ProductList = () => {

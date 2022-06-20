@@ -18,7 +18,7 @@ import { getProduct } from "../../actions/productAction";
 import MetaData from "../layout/MetaData";
 import Sidebar from "./Sidebar.js";
 import { getAllUsers } from '../../actions/userAction';
-import "./SCSS/Dashboard/Dashboard.css";
+import "./CSS/Dashboard/Dashboard.css";
 
 ChartJS.register(
     CategoryScale,

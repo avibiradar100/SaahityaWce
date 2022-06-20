@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PeopleIcon from "@material-ui/icons/People";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import "./SCSS/Sidebar/Sidebar.css";
+import "./CSS/Sidebar/Sidebar.css";
 
 
 const Sidebar = () => {

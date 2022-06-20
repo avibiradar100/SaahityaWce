@@ -10,7 +10,7 @@ import { clearErrors, loadUser,login, register } from "../../actions/userAction.
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
 
-import "./SCSS/LoginSignUp/LoginSignUp.css";
+import "./CSS/LoginSignUp/LoginSignUp.css";
 
 
 const LoginSignUp = () => {
@@ -54,6 +54,7 @@ const LoginSignUp = () => {
         e.preventDefault();
         await dispatch(register(name,email,password,phone,avatar));
         dispatch(loadUser());
+        alert.info("Click on Your profile to add Products..");
     }
 
     const registerDataChange = (e) => {

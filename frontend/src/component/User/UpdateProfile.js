@@ -8,7 +8,7 @@ import { useAlert } from "react-alert";
 import { useNavigate } from "react-router-dom";
 import { UPDATE_PROFILE_RESET } from "../../constants/userConstants";
 import MetaData from "../layout/MetaData";
-import "./SCSS/UpdateProfile/UpdateProfile.css";
+import "./CSS/UpdateProfile/UpdateProfile.css";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 const UpdateProfile = () => {

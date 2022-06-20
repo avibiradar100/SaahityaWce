@@ -5,7 +5,7 @@ import Loader from "../layout/Loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
 // import { Button } from "@mui/material";
 import { useAlert } from "react-alert";
-import "./SCSS/Profile/Profile.css";
+import "./CSS/Profile/Profile.css";
 import { logoutUser, deleteMyProfile } from "../../actions/userAction";
 
 const Profile = () => {

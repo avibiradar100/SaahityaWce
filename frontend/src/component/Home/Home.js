@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react';
 import { Link } from "react-router-dom";
-import "./SCSS/Home.css";
+import "./CSS/Home.css";
 import ProductCard from './ProductCard.js';
 import MetaData from '../layout/MetaData';
 import { clearErrors, getProduct } from '../../actions/productAction';

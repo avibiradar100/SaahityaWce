@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography} from "@material-ui/core";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import "./SCSS/About.css";
+import "./CSS/About.css";
 import MetaData from "../MetaData";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
