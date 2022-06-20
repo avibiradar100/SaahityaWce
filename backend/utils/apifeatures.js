@@ -24,7 +24,7 @@ class ApiFeatures {
         const queryCopy = { ...this.querystr };
 
         // removing some fields so that these keyword don't run own function for category
-        const removeFields = ["keyword", "page", "limit"];
+        const removeFields = ["page", "limit"];
 
         removeFields.forEach((key) => delete queryCopy[key]);
 
