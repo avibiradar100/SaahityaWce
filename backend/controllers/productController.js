@@ -116,6 +116,7 @@ exports.getProductDetails = async (req, res, next) => {
 exports.updateProduct = async (req, res, next) => {
   try {
     let product = await Product.findById(req.params.id);
+    let user=await User.findById(req.user._id);
 
     if (!product) {
       return res.status(404).json({
@@ -124,56 +125,57 @@ exports.updateProduct = async (req, res, next) => {
       });
     }
 
-    if (req.user._id.toString() !== product.owner.toString()) {
-      return res.status(403).json({
-        success: false,
-        message: "Unauthorized",
+    if (req.user._id.toString() == product.owner.toString() || user.role=='admin') {
+      // Images Start Here
+      let images = [];
+
+      if (typeof req.body.images === "string") {
+        images.push(req.body.images);
+      } else {
+        images = req.body.images;
+      }
+
+      if (images !== undefined) {
+        // Deleting Images From Cloudinary
+        for (let i = 0; i < product.images.length; i++) {
+          await cloudinary.uploader.destroy(product.images[i].public_id);
+        }
+
+        // Updating New Images in Clodinary
+        const imagesLinks = [];
+
+        for (let i = 0; i < images.length; i++) {
+          const result = await cloudinary.uploader.upload(images[i], {
+            folder: "images",
+          });
+
+          imagesLinks.push({
+            public_id: result.public_id,
+            url: result.secure_url,
+          });
+        }
+
+        req.body.images = imagesLinks;
+      }
+
+      product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false,
+      });
+
+      return res.status(200).json({
+        success: true,
+        message: "Product updated successfully",
+        product,
       });
     }
 
-    // Images Start Here
-    let images = [];
-
-    if (typeof req.body.images === "string") {
-      images.push(req.body.images);
-    } else {
-      images = req.body.images;
-    }
-
-    if (images !== undefined) {
-      // Deleting Images From Cloudinary
-      for (let i = 0; i < product.images.length; i++) {
-        await cloudinary.uploader.destroy(product.images[i].public_id);
-      }
-
-      // Updating New Images in Clodinary
-      const imagesLinks = [];
-
-      for (let i = 0; i < images.length; i++) {
-        const result = await cloudinary.uploader.upload(images[i], {
-          folder: "images",
-        });
-
-        imagesLinks.push({
-          public_id: result.public_id,
-          url: result.secure_url,
-        });
-      }
-
-      req.body.images = imagesLinks;
-    }
-
-    product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-      useFindAndModify: false,
+    res.status(403).json({
+      success: false,
+      message: "Unauthorized",
     });
 
-    res.status(200).json({
-      success: true,
-      message: "Product updated successfully",
-      product,
-    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -203,6 +205,7 @@ exports.getAdminProducts = async (req, res, next) => {
 exports.deleteProduct = async (req, res, next) => {
   try {
     const product = await Product.findById(req.params.id);
+    let user=await User.findById(req.user._id);
 
     if (!product) {
       return res.status(404).json({
@@ -211,19 +214,27 @@ exports.deleteProduct = async (req, res, next) => {
       });
     }
 
-    //delete  product's all images
-    for (let i = 0; i < product.images.length; i++) {
-      await cloudinary.uploader.destroy(product.images[i].public_id);
-    }
+     if (req.user._id.toString() == product.owner.toString() || user.role=='admin'){
+        
+        //delete  product's all images
+        for (let i = 0; i < product.images.length; i++) {
+          await cloudinary.uploader.destroy(product.images[i].public_id);
+        }
 
-    await product.remove();
+        await product.remove();
 
-    res.status(200).json({
-      success: true,
-      message: "Product deleted successfully",
-      product,
+        return res.status(200).json({
+          success: true,
+          message: "Product deleted successfully",
+          product,
+        });
+     }
+     res.status(403).json({
+      success: false,
+      message: "Unauthorized",
     });
-  } catch (error) {
+
+      } catch (error) {
     res.status(500).json({
       success: false,
       message: error.message,

@@ -129,7 +129,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
   }
 };
 
-// Delete Product --By iwner of product as well as admin
+// Delete Product --By owner of product as well as admin
 export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({

@@ -6,47 +6,61 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, clearErrors } from "../../actions/productAction";
 import { useAlert } from "react-alert";
+import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
 import { loadUser } from "../../actions/userAction";
+
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const navigate = useNavigate();
 
-  const { isAuthenticated, user, error, loading } = useSelector(
+  const { isAuthenticated,error,user} = useSelector(
     (state) => state.user
   );
 
-  const deleteProductHandler = async () => {
-    alert.success("Deleting...");
-    await dispatch(deleteProduct(product._id));
-    await dispatch(loadUser());
-    alert.success("Deleted  Successfully");
-  };
+  const { error: deleteError,isDeleted } = useSelector((state) => state.product);
 
-  useEffect(() => {
-    if (error || !isAuthenticated) {
-      alert.error(error);
-      dispatch(clearErrors());
+  const deleteProductHandler = async() => {
+    dispatch(deleteProduct(product._id));
+  }
+
+useEffect(() => {
+    if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
     }
-    if (loading === true) {
-      navigate("/my/products");
+    if (deleteError) {
+        alert.error(deleteError);
+        dispatch({ type: DELETE_PRODUCT_RESET });
     }
-  }, [dispatch, error, isAuthenticated, alert, loading, navigate]);
+
+    if (isDeleted) {
+        alert.success("Product Deleted Successfully");
+        navigate("/my/products");
+        dispatch({
+            type: DELETE_PRODUCT_RESET
+        });
+        dispatch(loadUser())
+    }
+    }, [dispatch, alert, error, navigate, deleteError,isDeleted]);
+
 
   return (
     <Link className="productCard" to={`/product/${product._id}`}>
       <img src={product.images[0].url} alt={product.name} />
       <span className="productPriceSpan">{`₹${product.price}`}</span>
       <p>{product.name}</p>
-      {isAuthenticated && user._id === product.owner ? (
+      {isAuthenticated && (user._id === product.owner || user.role==="admin") ? (
         <div className="productPriceSpan">
           <Link to={`/update/product/${product._id}`}>
             <EditIcon />
           </Link>
-          <Button onClick={deleteProductHandler}>
-            <DeleteIcon />
-          </Button>
+          <Link to={`/my/products`}>
+            <Button onClick={deleteProductHandler}>
+              <DeleteIcon />
+            </Button>
+          </Link>
         </div>
       ) : (
         <></>
