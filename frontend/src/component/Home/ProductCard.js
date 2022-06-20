@@ -23,6 +23,7 @@ const ProductCard = ({ product }) => {
 
   const deleteProductHandler = async() => {
     dispatch(deleteProduct(product._id));
+    alert.success("Product Deleted Successfully");
   }
 
 useEffect(() => {
@@ -36,8 +37,7 @@ useEffect(() => {
     }
 
     if (isDeleted) {
-        alert.success("Product Deleted Successfully");
-        navigate("/my/products");
+        navigate("/account");
         dispatch({
             type: DELETE_PRODUCT_RESET
         });
