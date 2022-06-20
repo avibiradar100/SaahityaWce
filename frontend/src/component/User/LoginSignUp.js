@@ -54,7 +54,7 @@ const LoginSignUp = () => {
         e.preventDefault();
         await dispatch(register(name,email,password,phone,avatar));
         dispatch(loadUser());
-        alert.info("Click on Your profile to add Products..");
+        alert.info("Click on Your Right-Top profile icon to add Products..");
     }
 
     const registerDataChange = (e) => {
