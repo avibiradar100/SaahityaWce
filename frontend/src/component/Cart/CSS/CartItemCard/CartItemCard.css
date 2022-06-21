@@ -18,7 +18,7 @@
           justify-content: normal;
 }
 
-.CartItemCard > img {
+img {
   width: 5vmax;
 }
 
@@ -67,7 +67,7 @@
     padding: 3vmax;
     height: 25vmax;
   }
-  .CartItemCard > img {
+  img {
     width: 10vmax;
   }
   .CartItemCard > div {
