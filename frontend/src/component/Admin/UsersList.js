@@ -93,17 +93,21 @@ const UsersList = () => {
             renderCell: (params) => {
                 return (
                     <>
-                        <Link to={`/admin/user/${params.getValue(params.id, "id")}`}>
-                            <EditIcon />
-                        </Link>
+                        {params.getValue(params.id, "role") !== "admin" ?(
+                        <>
+                            <Link to={`/admin/user/${params.getValue(params.id, "id")}`}>
+                                <EditIcon />
+                            </Link>
 
-                        <Button
-                            onClick={() =>
-                                deleteUserHandler(params.getValue(params.id, "id"))
-                            }
-                        >
-                            <DeleteIcon />
-                        </Button>
+                            <Button
+                                onClick={() =>
+                                    deleteUserHandler(params.getValue(params.id, "id"))
+                                }
+                            >
+                                <DeleteIcon />
+                            </Button>
+                        </>
+                        ):(<></>)}
                     </>
                 );
             },
