@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 import { BsSearch} from "react-icons/bs";
 import { useSelector} from 'react-redux';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-
+import AddIcon from '@mui/icons-material/Add';
 
 const Header = () => {
 
@@ -104,6 +104,12 @@ const Header = () => {
              <NavLink to="/login">Login / SignUp</NavLink>
             </MenuItem>):(<></>)
             }
+            {user?(<MenuItem key="add" onClick={handleCloseNavMenu}>
+              <NavLink to="/create/product">
+                <AddIcon style={{color:'tomato'}}className="facebook" />
+              </NavLink>
+            </MenuItem>):(<></>)
+            }
             </Menu>
           </Box>
           <Typography
@@ -150,14 +156,14 @@ const Header = () => {
               to="/search"
               className={"navBarLink"}
             >
-              <BsSearch className="facebook" />
+              <BsSearch style={{height:'20px'}} className="facebook" />
             </NavLink>
             <NavLink
               key="Cart" 
               to="/cart"
               className={"navBarLink"}
             >
-             <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}} />
+             <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset",height:'20px'}} />
               <span>{cartItems.length}</span>
             </NavLink>
             { !user ? (
@@ -167,6 +173,15 @@ const Header = () => {
               className={"navBarLink"}
             >
               Login / Signup
+            </NavLink>):(<></>)
+            }
+            { user ? (
+            <NavLink
+              key="add" 
+              to="/create/product"
+              className={"navBarLink"}
+            >
+               <AddIcon style={{height:'20px'}} className="facebook" />
             </NavLink>):(<></>)
             }
           </Box>
