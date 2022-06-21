@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, loadUser,login, register } from "../../actions/userAction.js";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
-
+import validateSignUp from "./validateSignUp.js";
 import "./CSS/LoginSignUp/LoginSignUp.css";
 
 
@@ -52,8 +52,10 @@ const LoginSignUp = () => {
 
     const registerSubmit =async (e) => {
         e.preventDefault();
-        await dispatch(register(name,email,password,phone,avatar));
-        dispatch(loadUser());
+        if(validateSignUp(email, password,phone, alert)){
+             await dispatch(register(name,email,password,phone,avatar));
+            dispatch(loadUser());
+        }
     }
 
     const registerDataChange = (e) => {
@@ -148,16 +150,17 @@ const LoginSignUp = () => {
                         </div>
                         <div className="signUpEmail">
                             <MailOutlineIcon />
-                            <input type="email" placeholder="Email" name="email" required value={email}
+                            <input type="email" id="email" placeholder="Email" name="email" required value={email}
                                 onChange={registerDataChange}
                             />
                         </div>
                          <div className="signUpPhone">
                             <PhoneIcon />
                             <input
-                                type="text"
+                                type="number"
                                 placeholder="Phone"
                                 required
+                                id="phone"
                                 name="phone"
                                 value={phone}
                                 onChange={registerDataChange}
@@ -165,7 +168,7 @@ const LoginSignUp = () => {
                         </div>
                         <div className="signUpPassword">
                             <LockOpenIcon />
-                            <input type="password" placeholder="Password" name="password" required value={password}
+                            <input type="password" placeholder="Password" name="password"  id="password" required value={password}
                                 onChange={registerDataChange}
                             />
                         </div>
