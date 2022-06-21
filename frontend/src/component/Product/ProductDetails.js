@@ -80,7 +80,6 @@ const ProductDetails = () => {
                         
                         <div className="detailsBlock-3">
                             <h2>{`₹${product.price}`}</h2>
-                            <Button onClick={addToCartHandler} className='submitReview'>Add to Cart</Button>
                         </div>
 
                         <div className="detailsBlock-2">
@@ -101,7 +100,8 @@ const ProductDetails = () => {
 
                         <div className="detailsBlock-2">
                           <h2>Intrested ?</h2>
-                          <Button onClick={submitReviewToggle} className='submitReview button'>Notify Owner</Button>
+                          <Button onClick={addToCartHandler} className='submitReview'>Add to Cart</Button>
+                          <Button onClick={submitReviewToggle} className='submitReview'>Notify Owner</Button>
                         </div>
 
                     </div>

@@ -223,7 +223,7 @@ body {
 
 .ProductDetails .submitReview {
   border-radius: 20px;
-  margin: 1vmax 0vmax;
+  margin: 0 1vmax;
   border: none;
   outline: none;
   background-color: tomato;

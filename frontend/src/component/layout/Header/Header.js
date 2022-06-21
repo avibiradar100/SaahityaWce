@@ -10,11 +10,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import { NavLink } from "react-router-dom";
-import { BsSearch, BsFillCartCheckFill } from "react-icons/bs";
+import { BsSearch} from "react-icons/bs";
 import { useSelector} from 'react-redux';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+
 
 const Header = () => {
 
+  const { cartItems } = useSelector((state) => state.cart);
   const {user} = useSelector((state) => state.user);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -92,7 +95,9 @@ const Header = () => {
             </MenuItem>
             <MenuItem key="Cart" onClick={handleCloseNavMenu}>
               <NavLink to="/cart">
-              <BsFillCartCheckFill className="facebook1" />
+                <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}
+                } />
+                <span>{cartItems.length}</span>
               </NavLink>
             </MenuItem>
             {!user ?(<MenuItem key="LoginSignup" onClick={handleCloseNavMenu}>
@@ -152,7 +157,8 @@ const Header = () => {
               to="/cart"
               className={"navBarLink"}
             >
-              <BsFillCartCheckFill className="facebook" />
+             <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}} />
+              <span>{cartItems.length}</span>
             </NavLink>
             { !user ? (
             <NavLink

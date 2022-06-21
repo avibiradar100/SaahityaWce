@@ -5,7 +5,6 @@ import Backdrop from "@material-ui/core/Backdrop";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +16,6 @@ import SyncLockIcon from '@mui/icons-material/SyncLock';
 
 const UserOptions = ({ user }) => {
 
-    const { cartItems } = useSelector((state) => state.cart);
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
     const alert = useAlert();
@@ -41,7 +39,6 @@ const UserOptions = ({ user }) => {
         { icon: <EditIcon />, name: "update Profile", func: update },
         { icon: <SyncLockIcon />, name: "Change Password", func: change },
         { icon: <DeleteIcon />, name: "Delete Profile", func: deleteProfile },
-        { icon: <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}} />, name: `Cart(${cartItems.length})`, func: cart },
         { icon: <ExitToAppIcon />, name: "Logout", func: logoutuser },
     ];
 
@@ -71,9 +68,6 @@ const UserOptions = ({ user }) => {
         await dispatch(deleteMyProfile());
         await dispatch(logoutUser());
         alert.success("Deleted  Successfully");
-    }
-    function cart() {
-        navigate("/cart");
     }
 
     function logoutuser() {
