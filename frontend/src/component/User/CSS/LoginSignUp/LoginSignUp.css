@@ -254,8 +254,8 @@
     background-color: white;
   }
   .LoginSignUpContainer .LoginSignUpBox {
-    width: 601px;
-    height: 550px;
+    width: 401px;
+    height: 520px;
   }
   .LoginSignUpContainer .LoginSignUpBox .login_signUp_toggle {
     height: 5vmax;
@@ -268,13 +268,13 @@
   }
   .LoginSignUpContainer .LoginSignUpBox form div input {
     padding: 16px 42px;
-    font: 300 15px cursive;
+    font: 300 15px "Roboto";
   }
   .LoginSignUpContainer .LoginSignUpBox form div svg {
     font-size: 2.8vmax;
   }
   .LoginSignUpContainer .LoginSignUpBox form a {
-    font: 500 1.9vmax "Gill Sans";
+    font: 500 1.9vmax "Roboto";
   }
   .LoginSignUpContainer .LoginSignUpBox form .loginBtn,
   .LoginSignUpContainer .LoginSignUpBox form .signUpBtn {
@@ -282,11 +282,13 @@
     padding: 16px;
   }
   .LoginSignUpContainer .signUpForm #registerImage img {
-    width: 8vmax;
+    width: 30px;
+    padding-bottom: 5px;
     border-radius: 100%;
   }
   .LoginSignUpContainer .signUpForm #registerImage input::file-selector-button {
-    height: 7vh;
-    font: 400 1.8vmax cursive;
+    height: 30px;
+    padding-bottom: 5px;
+    font: 400 15px "Roboto";
   }
 }
