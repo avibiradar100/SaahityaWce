@@ -37,7 +37,7 @@ footer .leftFooter h4 {
 footer .leftFooter p {
   text-align: center;
   font-size: 1.4vmax;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 footer .leftFooter img {
@@ -60,6 +60,7 @@ footer .midFooter h1 {
 footer .midFooter p {
   max-width: 60%;
   margin: 1vmax auto;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 footer .rightFooter {

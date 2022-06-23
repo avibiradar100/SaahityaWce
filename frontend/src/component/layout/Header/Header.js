@@ -47,7 +47,7 @@ const Header = () => {
               textDecoration: "none"
             }}
           >
-            <h1>Saahitya</h1>
+            <h1>साहित्य</h1>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -127,7 +127,7 @@ const Header = () => {
               textDecoration: "none"
             }}
           >
-           <h1>Saahitya</h1>
+           <h1>साहित्य</h1>
           </Typography>
           <Box sx={{flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <NavLink

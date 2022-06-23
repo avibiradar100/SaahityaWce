@@ -32,8 +32,6 @@ class ApiFeatures {
         // first make object to string
         let querystr = JSON.stringify(queryCopy);
 
-        // gt => greater than, gte => greater than equal to, lt => less than, lte => less than equal to,
-        querystr = querystr.replace(/\b(gt|gte|lt|lte)\b/g, (key) => `$${key}`);
 
         // again make string to object
         this.query = this.query.find(JSON.parse(querystr));

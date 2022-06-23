@@ -10,15 +10,11 @@ const Footer = () => {
     return (
         <footer id="footer">
             <div className="leftFooter">
-                <h4>DOWNLOAD OUR APP</h4>
-                <img src={PlayStore} alt="playstore" />
-                <img src={AppStore} alt="Appstore" />
+                <p>Education is our first priority</p>
             </div>
 
             <div className="midFooter">
-                <h1>Saahitya</h1>
-                <p>Education is our first priority</p>
-
+                <h1>साहित्य</h1>
                 <p>Copyrights {new Date().getFullYear()} &copy; Saahitya</p>
             </div>
 
