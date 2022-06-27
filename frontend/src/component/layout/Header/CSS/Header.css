@@ -29,11 +29,13 @@ h1{
 .navBarLink{
   color: white;
   margin: 0 1vmax;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .first{
   color: white;
   margin:0 1vmax 0 40vw;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 a {
