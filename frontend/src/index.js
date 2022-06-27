@@ -9,7 +9,7 @@ import Favicon from 'react-favicon';
 
 // Alert Message CSS
 const options = {
-  timeout: 5000,
+  timeout: 3000,
   position: positions.BOTTOM_CENTER,
   transition: transitions.SCALE,
   
