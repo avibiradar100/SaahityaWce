@@ -58,12 +58,11 @@ exports.getAllProducts = async (req, res, next) => {
     const resultPerPage = 6;
     const productsCount = await Product.countDocuments();
     // querying a keyword, filtering the data and changing page with new data in your API
-    const apiFeature = new ApiFeatures(Product.find(), req.query)
+    const apiFeature = new ApiFeatures(Product.find().sort({"createdAt": -1}), req.query)
       .search()
       .filter();
 
-    let products = await apiFeature.query;
-
+    var products= await apiFeature.query;
     let filteredProductsCount = products.length;
 
     apiFeature.pagination(resultPerPage);

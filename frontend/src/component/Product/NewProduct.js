@@ -134,6 +134,7 @@ const NewProduct = () => {
                                 placeholder="Product Description"
                                 name="description"
                                 value={description}
+                                required
                                 onChange={(e) => setDescription(e.target.value)}
                                 cols="30"
                                 rows="1"
@@ -142,7 +143,7 @@ const NewProduct = () => {
 
                         <div>
                             <AccountTreeIcon />
-                             <select onChange={(e) => setCategory(e.target.value)}>
+                             <select onChange={(e) => setCategory(e.target.value)} required>
                                 <option value="">Choose Category</option>
                                 {categories.map((cate) => (
                                     <option key={cate} value={cate}>

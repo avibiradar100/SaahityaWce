@@ -46,7 +46,7 @@ class ApiFeatures {
         // and you are showing 10 product each page then result will be suppose for 3rd page 10*(3-1) = 20
         // means you will skip 20 product of two pages
         const skip = resultPerPage * (currentPage - 1);
-
+    
         this.query = this.query.limit(resultPerPage).skip(skip);
 
         return this;

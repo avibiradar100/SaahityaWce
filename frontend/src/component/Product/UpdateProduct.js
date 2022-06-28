@@ -42,6 +42,17 @@ const UpdateProduct = () => {
 
     const productId = id;
 
+     const categories = [
+        "Laptop",
+        "Books",
+        "Calculator",
+        "Drafter",
+        "Apron",
+        "Camera",
+        "SmartPhones",
+        "other"
+   ];
+
     useEffect(() => {
         if (product && product._id !== productId) {
             dispatch(getProductDetails(productId));
@@ -160,15 +171,16 @@ const UpdateProduct = () => {
                             ></textarea>
                         </div>
 
-                        <div>
+                         <div>
                             <AccountTreeIcon />
-                             <input
-                                type="text"
-                                placeholder="Category"
-                                required
-                                value={category}
-                                onChange={(e) => setCategory(e.target.value)}
-                            />
+                             <select onChange={(e) => setCategory(e.target.value)}>
+                                <option value="">Choose Category</option>
+                                {categories.map((cate) => (
+                                    <option key={cate} value={cate}>
+                                        {cate}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
 
                         <div id="createProductFormFile">
