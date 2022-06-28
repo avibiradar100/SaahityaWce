@@ -20,6 +20,7 @@ const categories = [
     "Apron",
     "Camera",
     "SmartPhones",
+    "other"
 ];
 
 const Products = () => {

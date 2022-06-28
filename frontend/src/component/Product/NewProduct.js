@@ -29,6 +29,17 @@ const NewProduct = () => {
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
 
+    const categories = [
+        "Laptop",
+        "Books",
+        "Calculator",
+        "Drafter",
+        "Apron",
+        "Camera",
+        "SmartPhones",
+        "other"
+   ];
+
     useEffect(() => {
         if (error) {
             alert.error(error);
@@ -131,12 +142,14 @@ const NewProduct = () => {
 
                         <div>
                             <AccountTreeIcon />
-                             <input
-                                type="text"
-                                name="category"
-                                placeholder="Category"
-                                onChange={(e) => setCategory(e.target.value)}
-                            />
+                             <select onChange={(e) => setCategory(e.target.value)}>
+                                <option value="">Choose Category</option>
+                                {categories.map((cate) => (
+                                    <option key={cate} value={cate}>
+                                        {cate}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                         <p>Select 1 or multiple product images </p>
                         <div id="createProductFormFile">
