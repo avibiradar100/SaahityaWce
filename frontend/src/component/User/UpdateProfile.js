@@ -23,7 +23,7 @@ const UpdateProfile = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [avatar, setAvatar] = useState();
-  const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
+  const [avatarPreview, setAvatarPreview] = useState("");
 
   const updateProfileSubmit = (e) => {
     e.preventDefault();

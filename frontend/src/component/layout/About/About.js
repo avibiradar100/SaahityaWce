@@ -3,6 +3,7 @@ import { Typography} from "@material-ui/core";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import "./CSS/About.css";
 import MetaData from "../MetaData";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const About = () => {
@@ -37,6 +38,9 @@ const About = () => {
                             <a href="https://www.linkedin.com/in/avinash-biradar-9279241aa/" target="blank">
                                 <LinkedInIcon className="gitHubSvgIcon" />
                             </a>
+                            <a href="https://github.com/avibiradar100" target="blank">
+                                <GitHubIcon className="gitHubSvgIcon" />
+                            </a>
                         </div>
                     </div>
 
@@ -54,6 +58,9 @@ const About = () => {
 
                             <a href="https://www.linkedin.com/in/teknath-jha-2a6148197" target="blank">
                                 <LinkedInIcon className="gitHubSvgIcon" />
+                            </a>
+                            <a href="https://github.com/Teknath-jha" target="blank">
+                                <GitHubIcon className="gitHubSvgIcon" />
                             </a>
                         </div>
                     </div>
