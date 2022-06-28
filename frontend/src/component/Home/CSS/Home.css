@@ -154,11 +154,22 @@
 @media screen and (max-width: 620px) {
 
   .container .productCard p {
-    font-size: 1.7vmax;
+    font-size: 2vmax;
+    margin-left: 20px;
+  }
+  .container .productCard div {
+      margin: 0.5vmax 17px;
+      font-size: 2vmax;
+  }
+  .container .productCard img {
+    width: 30vmax;
+    border-radius: 10px 10px 0px 0px;
+    margin:0px 20px;
+    height: 206px;
   }
 
   .container .productCard {
-  width: 20vmax;
+  width: 40vmax;
   text-decoration: none;
   color: #303030;
   -webkit-box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
@@ -168,19 +179,7 @@
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: normal;
-      -ms-flex-align: normal;
-          align-items: normal;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  height:41vh;
  }
   .banner {
   height: 32vh;
@@ -191,11 +190,12 @@
     width: 15vmax;
   }
   .container .productCard div .span {
-    margin: 0.5vmax;
-    font: 500 1.4vmax "Roboto", Arial, sans-serif;
+    margin: 0.2vmax 0.3vmax;
+    font: 500 1.5vmax "Roboto", Arial, sans-serif;
   }
   .container .productCard > .productPriceSpan {
-    font-size: 1.5vmax;
+    font-size: 2.5vmax;
+    margin-left: 20px;
   }
   .more{
     margin:0% 31% 12%;
