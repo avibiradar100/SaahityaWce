@@ -108,6 +108,7 @@ export const logoutUser = () => async (dispatch) => {
 // Update Profile
 export const updateProfile = (userData) => async (dispatch) => {
   try {
+    console.log(userData);
     dispatch({ type: UPDATE_PROFILE_REQUEST });
 
     const config = { headers: { "Content-Type": "multipart/form-data" } };

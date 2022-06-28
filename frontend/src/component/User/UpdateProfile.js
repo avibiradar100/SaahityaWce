@@ -23,7 +23,7 @@ const UpdateProfile = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [avatar, setAvatar] = useState();
-  const [avatarPreview, setAvatarPreview] = useState("");
+  const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
 
   const updateProfileSubmit = (e) => {
     e.preventDefault();
@@ -81,7 +81,7 @@ const UpdateProfile = () => {
         <Loader />
       ) : (
         <>
-          <MetaData title="Update Profile -- Saahitya" />
+          <MetaData title="Update Profile -- saahitya" />
           <div className="updateProfileContainer">
             <div className="updateProfileBox">
               <h2 className="updateProfileHeading">Update Profile</h2>
@@ -130,7 +130,6 @@ const UpdateProfile = () => {
                     type="file"
                     name="avatar"
                     accept="image/*"
-                    value={avatar}
                     onChange={updateProfileDataChange}
                   />
                 </div>
