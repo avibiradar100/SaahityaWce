@@ -74,7 +74,7 @@
 }
 
 .aboutSectionContainer > div > div > span {
-  font: 100 1.5vmax "Roboto";
+  font: 100 1.0vmax "Roboto";
   color: rgba(0, 0, 0, 0.768);
   width: 80%;
 }
@@ -108,7 +108,7 @@
 */
 @media screen and (max-width: 600px) {
   .aboutSectionContainer2 >span{
-    margin-left: 3vmax;
+    margin-left: 5vmax;
     width: 80%;
   }
   .aboutSectionContainer > div {
@@ -121,9 +121,12 @@
   .aboutSectionContainer > div > div > p {
     font: 100 2vmax "Roboto";
   }
-  .aboutSectionContainer2 {
-    margin-top: 9vmax;
-  }
+  .aboutSectionContainer > div > div > span {
+    font: 100 1.4vmax "Roboto";
+    color: rgba(0, 0, 0, 0.768);
+    width: 80%;
+ }
+
   .aboutSectionContainer2 > h2 {
     font: 100 3vmax "Roboto";
     margin: 2vmax;

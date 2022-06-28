@@ -39,6 +39,24 @@ const About = () => {
                             </a>
                         </div>
                     </div>
+
+                    <div className="aboutSectionContainer2">
+                        <h3>Teknath Jha</h3><br/>
+                        <span>Walchand College Of Engineering,Sangli.</span>
+                        <Typography component="h2">Get In Touch</Typography>
+                        <div className="social">
+                            <a
+                            href="https://twitter.com/teknath_jha"
+                            target="blank"
+                            >
+                                <TwitterIcon className="twitterSvgIcon" />
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/teknath-jha-2a6148197" target="blank">
+                                <LinkedInIcon className="gitHubSvgIcon" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

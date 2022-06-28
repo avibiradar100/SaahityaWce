@@ -21,7 +21,7 @@ const Cart = () => {
       {cartItems.length === 0 ? (
         <div className="emptyCart">
           <RemoveShoppingCartIcon />
-          <Typography>No Product in Your Cart</Typography>
+          <Typography>No Product in Your Liked List</Typography>
           <Link to="/products">View Products</Link>
         </div>
       ) : (

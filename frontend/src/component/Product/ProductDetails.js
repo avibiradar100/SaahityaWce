@@ -36,11 +36,12 @@ const ProductDetails = () => {
 
     const addToCartHandler = () => {
         dispatch(addItemsToCart(id));
-        alert.success("Item Added To Cart");
+        alert.success("Item Added To Liked List");
     };
 
     const submitReviewToggle = () => {
-        open ? setOpen(false) : setOpen(true);
+        alert.info("Under Development..");
+        alert.info("you can call directly to owner..");
     };
     
     useEffect(() => {
@@ -100,7 +101,7 @@ const ProductDetails = () => {
 
                         <div className="detailsBlock-2">
                           <h2>Intrested ?</h2>
-                          <Button onClick={addToCartHandler} className='submitReview'>Add to Cart</Button>
+                          <Button onClick={addToCartHandler} className='submitReview'>Add to Liked list</Button>
                           <Button onClick={submitReviewToggle} className='submitReview'>Notify Owner</Button>
                         </div>
 

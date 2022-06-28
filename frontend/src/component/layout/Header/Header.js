@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { NavLink } from "react-router-dom";
 import { BsSearch} from "react-icons/bs";
 import { useSelector} from 'react-redux';
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddIcon from '@mui/icons-material/Add';
 
 const Header = () => {
@@ -95,7 +95,7 @@ const Header = () => {
             </MenuItem>
             <MenuItem key="Cart" onClick={handleCloseNavMenu}>
               <NavLink to="/cart">
-                <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}
+                <FavoriteIcon style={{color:cartItems.length>0?"tomato":"unset"}
                 } />
                 <span>{cartItems.length}</span>
               </NavLink>
@@ -163,7 +163,7 @@ const Header = () => {
               to="/cart"
               className={"navBarLink"}
             >
-             <ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset",height:'20px'}} />
+             <FavoriteIcon style={{color:cartItems.length>0?"tomato":"unset",height:'20px'}} />
               <span>{cartItems.length}</span>
             </NavLink>
             { !user ? (
