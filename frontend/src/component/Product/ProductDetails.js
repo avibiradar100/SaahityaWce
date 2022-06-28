@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, getProductDetails} from '../../actions/productAction';
@@ -19,8 +19,6 @@ const ProductDetails = () => {
     const alert = useAlert();
 
     const {user,product,loading, error } = useSelector((state) => state.productDetails);
-
-    const [open, setOpen] = useState(false);
 
 
     // Get the userId param from the URL.
