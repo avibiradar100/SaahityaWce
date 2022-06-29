@@ -31,6 +31,9 @@
   color: rgba(0, 0, 0, 0.637);
   font: 400 2rem "Roboto";
 }
+.MuiDataGrid-columnsContainer{
+  max-height: 26px;
+}
 
 .productListContainer .productListTable {
   background-color: white;
@@ -60,6 +63,7 @@
 
 .MuiDataGrid-columnHeader div {
   color: white !important;
+  background-color: tomato;
 }
 
 .MuiDataGrid-root .MuiDataGrid-cell--textRight.MuiDataGrid-cell--withRenderer,
