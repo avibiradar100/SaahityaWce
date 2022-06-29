@@ -153,12 +153,23 @@
     position:fixed;
     top: 2px;
     margin: 21% -17% 0%;
-    text-align: center;
+    text-align:right;
   }
   .paginationBox .pagination .page-item .page-link {
     font: 300 1.7vmax "Roboto";
   }
-  .filterBox .categoryBox .category-link {
-    font: 400 1.8vmax "Roboto";
+  .filterBox .categoryBox {
+    font: 400 1.2vmax "Roboto";
+    margin-left: 35.2px;
+    text-align: center;
   }
+  .filterBox .categoryBox .category-link {
+    list-style: none;
+    width: 40px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    color: rgba(0, 0, 0, 0.61);
+    font: 400 1vmax "Roboto";
+}
 }

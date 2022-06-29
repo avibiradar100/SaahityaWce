@@ -72,7 +72,7 @@
   font-size: 1.5vmax;
   font-weight: 500;
   margin: 1vmax 0.5vmax;
-  margin-bottom: 0;
+  margin-bottom: 1vmax;
 }
 
 .container .productCard div {

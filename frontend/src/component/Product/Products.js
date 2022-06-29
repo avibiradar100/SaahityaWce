@@ -13,13 +13,14 @@ import './CSS/Products/Product.css';
 
 
 const categories = [
-    "Laptop",
-    "Books",
     "Calculator",
-    "Drafter",
-    "Apron",
+    "Keyboard & Mouse",
     "Camera",
     "SmartPhones",
+    "Laptop",
+    "Books",
+    "Drafter",
+    "Apron",
     "other"
 ];
 

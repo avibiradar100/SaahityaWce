@@ -66,7 +66,7 @@ useEffect(() => {
         <></>
       )}
       <div>
-        <span className="span">{product.category}</span>
+        {/* <span className="span">{user.name}</span> */}
         <span className="span">{product.createdAt.substring(0, 10)}</span>
       </div>
     </Link>
