@@ -31,13 +31,14 @@ const NewProduct = () => {
 
     const categories = [
         "Calculator",
-        "Keyboard & Mouse",
-        "Camera",
         "SmartPhones",
         "Laptop",
         "Books",
         "Drafter",
         "Apron",
+        "Keyboard",
+        "Mouse",
+        "Camera",
         "other"
    ];
 

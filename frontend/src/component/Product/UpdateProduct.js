@@ -42,17 +42,18 @@ const UpdateProduct = () => {
 
     const productId = id;
 
-     const categories = [
+    const categories = [
         "Calculator",
-        "Keyboard & Mouse",
-        "Camera",
         "SmartPhones",
         "Laptop",
         "Books",
         "Drafter",
         "Apron",
+        "Keyboard",
+        "Mouse",
+        "Camera",
         "other"
-   ];
+    ];
 
     useEffect(() => {
         if (product && product._id !== productId) {
