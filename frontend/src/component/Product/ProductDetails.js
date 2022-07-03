@@ -3,7 +3,7 @@ import Carousel from 'react-material-ui-carousel';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearErrors, getProductDetails} from '../../actions/productAction';
 import { useAlert } from "react-alert";
-import { useParams } from "react-router-dom";
+import { useParams ,Link} from "react-router-dom";
 import Loader from '../layout/Loader/Loader.js';
 import MetaData from "../layout/MetaData";
 import { addItemsToCart } from "../../actions/cartAction";
@@ -19,6 +19,8 @@ const ProductDetails = () => {
     const alert = useAlert();
 
     const {user,product,loading, error } = useSelector((state) => state.productDetails);
+
+    const {isAutheticated}=useSelector((state)=>state.user)
 
 
     // Get the userId param from the URL.
@@ -88,13 +90,21 @@ const ProductDetails = () => {
 
                         <div className="detailsBlock-2">
                           <h2>Owner Name:</h2>
-                          <p>{user.name}</p>
+                          {isAutheticated ?
+                           (<p>{user.name}</p>):(
+                            <p>**********<Link  style={{color:'blue', paddingLeft:10}} to='/login'>See Details</Link></p>
+                          )}
                         </div>
 
                          <div className="detailsBlock-2">
                           <h2>Owner Contact:</h2>
-                          <p>Phone: {user.phone}</p>
-                          <p>Email: {user.email}</p>
+                           {isAutheticated ?
+                           (<><p>Phone: {user.phone}</p>
+                            <p>Email: {user.email}</p></>):(
+                            <><p>Phone:**********</p>
+                            <p>Email:*******</p>
+                             <Link style={{color:'blue'}} to='/login'>See Details</Link></>
+                           )}
                         </div>
 
                         <div className="detailsBlock-2">
