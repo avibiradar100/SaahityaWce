@@ -116,7 +116,7 @@ const ProductList = () => {
                     <DataGrid
                         rows={rows}
                         columns={columns}
-                        pageSize={10}
+                        pageSize={7}
                         className="productListTable"
                         autoHeight
                     />
