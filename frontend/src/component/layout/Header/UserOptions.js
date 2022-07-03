@@ -8,10 +8,9 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser,deleteMyProfile } from '../../../actions/userAction';
+import { logoutUser} from '../../../actions/userAction';
 import '../../../images/Profile.png'
 import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import SyncLockIcon from '@mui/icons-material/SyncLock';
 
 const UserOptions = ({ user }) => {
@@ -38,7 +37,6 @@ const UserOptions = ({ user }) => {
         { icon: <PersonIcon />, name: "Profile", func: account },
         { icon: <EditIcon />, name: "update Profile", func: update },
         { icon: <SyncLockIcon />, name: "Change Password", func: change },
-        { icon: <DeleteIcon />, name: "Delete Profile", func: deleteProfile },
         { icon: <ExitToAppIcon />, name: "Logout", func: logoutuser },
     ];
 
@@ -63,11 +61,6 @@ const UserOptions = ({ user }) => {
     }
     function change() {
         navigate("/password/update");
-    }
-    async function  deleteProfile() {
-        await dispatch(deleteMyProfile());
-        await dispatch(logoutUser());
-        alert.success("Deleted  Successfully");
     }
 
     function logoutuser() {
