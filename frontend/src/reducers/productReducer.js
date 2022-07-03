@@ -177,7 +177,7 @@ export const productDetailsReducer = (state = { product: {},user:{} }, action) =
             return {
                 loading: false,
                 product: action.payload.product,
-                owner:action.payload.user
+                user:action.payload.user
             }
 
         case PRODUCT_DETAILS_FAIL:

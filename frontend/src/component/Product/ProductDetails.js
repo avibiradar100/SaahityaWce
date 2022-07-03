@@ -19,7 +19,7 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
     const alert = useAlert();
 
-    const {owner,product,loading, error } = useSelector((state) => state.productDetails);
+    const {user,product,loading, error } = useSelector((state) => state.productDetails);
 
     const {isAuthenticated}=useSelector((state)=>state.user)
 
@@ -33,7 +33,7 @@ const ProductDetails = () => {
             dispatch(clearErrors());
         }
         dispatch(getProductDetails(id));
-    }, [dispatch, isAuthenticated,id, error, alert]);
+    }, [dispatch,id, error, alert]);
 
     const addToCartHandler = () => {
         dispatch(addItemsToCart(id));
@@ -83,7 +83,7 @@ const ProductDetails = () => {
                         <div className="detailsBlock-2">
                           <h2>Owner Name:</h2>
                           {isAuthenticated ?
-                           (<p>{owner.name}</p>):(
+                           (<p>{user.name}</p>):(
                             <p>**********<Link  style={{color:'blue', paddingLeft:10}} to='/login'>See Details</Link></p>
                           )}
                         </div>
@@ -91,8 +91,8 @@ const ProductDetails = () => {
                          <div className="detailsBlock-2">
                           <h2>Owner Contact:</h2>
                            {isAuthenticated ?
-                           (<><p>Phone: {owner.phone}</p>
-                            <p>Email: {owner.email}</p></>):(
+                           (<><p>Phone: {user.phone}</p>
+                            <p>Email: {user.email}</p></>):(
                             <><p>Phone:**********</p>
                             <p>Email:*******</p>
                              <Link style={{color:'blue'}} to='/login'>See Details</Link></>
