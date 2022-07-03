@@ -13,14 +13,15 @@ import {
 import './CSS/ProductDetails/ProductDetails.css';
 
 
+
 const ProductDetails = () => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
 
-    const {user,product,loading, error } = useSelector((state) => state.productDetails);
+    const {owner,product,loading, error } = useSelector((state) => state.productDetails);
 
-    const {isAutheticated}=useSelector((state)=>state.user)
+    const {isAuthenticated}=useSelector((state)=>state.user)
 
 
     // Get the userId param from the URL.
@@ -32,7 +33,7 @@ const ProductDetails = () => {
             dispatch(clearErrors());
         }
         dispatch(getProductDetails(id));
-    }, [dispatch, id, error, alert]);
+    }, [dispatch, isAuthenticated,id, error, alert]);
 
     const addToCartHandler = () => {
         dispatch(addItemsToCart(id));
@@ -43,15 +44,6 @@ const ProductDetails = () => {
         alert.info("Under Development..");
         alert.info("you can call directly to owner..");
     };
-    
-    useEffect(() => {
-        if (error) {
-            alert.error(error);
-            dispatch(clearErrors());
-        }
-
-        dispatch(getProductDetails(id));
-    }, [dispatch, id, error, alert]);
 
     return (
         <>
@@ -90,17 +82,17 @@ const ProductDetails = () => {
 
                         <div className="detailsBlock-2">
                           <h2>Owner Name:</h2>
-                          {isAutheticated ?
-                           (<p>{user.name}</p>):(
+                          {isAuthenticated ?
+                           (<p>{owner.name}</p>):(
                             <p>**********<Link  style={{color:'blue', paddingLeft:10}} to='/login'>See Details</Link></p>
                           )}
                         </div>
 
                          <div className="detailsBlock-2">
                           <h2>Owner Contact:</h2>
-                           {isAutheticated ?
-                           (<><p>Phone: {user.phone}</p>
-                            <p>Email: {user.email}</p></>):(
+                           {isAuthenticated ?
+                           (<><p>Phone: {owner.phone}</p>
+                            <p>Email: {owner.email}</p></>):(
                             <><p>Phone:**********</p>
                             <p>Email:*******</p>
                              <Link style={{color:'blue'}} to='/login'>See Details</Link></>
