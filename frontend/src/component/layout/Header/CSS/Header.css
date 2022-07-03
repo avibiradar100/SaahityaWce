@@ -73,7 +73,6 @@ li {
   -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
-
 .open {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,6 +233,9 @@ li {
   font-size: 3vmax;
   font-family: "Roboto", Arial, sans-serif;
   color: #fcfcfc;
+}
+.navitem{
+  padding-right: 12px;
 }
   .menu-link ul li {
     font-size: 2vmax !important;

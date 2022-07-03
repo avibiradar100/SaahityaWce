@@ -80,32 +80,32 @@ const Header = () => {
               }}
             >
             <MenuItem key="Home" onClick={handleCloseNavMenu}>
-            <NavLink to="/">Home</NavLink>
+            <NavLink className={'navitem'} to="/">Home</NavLink>
             </MenuItem>
             <MenuItem key="Products" onClick={handleCloseNavMenu}>
-            <NavLink  to="/products">Products</NavLink>
+            <NavLink  className={'navitem'} to="/products">Products</NavLink>
             </MenuItem>
             <MenuItem key="About" onClick={handleCloseNavMenu}>
-             <NavLink to="/about">About</NavLink>
+             <NavLink  className={'navitem'} to="/about">About</NavLink>
             </MenuItem>
              <MenuItem key="Search" onClick={handleCloseNavMenu}>
-             <NavLink to="/search">
+             <NavLink  className={'navitem'} to="/search">
               <BsSearch className="facebook1" />
              </NavLink>
             </MenuItem>
             <MenuItem key="Cart" onClick={handleCloseNavMenu}>
-              <NavLink to="/cart">
+              <NavLink  className={'navitem'} to="/cart">
                 <FavoriteIcon style={{color:cartItems.length>0?"tomato":"unset"}
                 } />
                 <span>{cartItems.length}</span>
               </NavLink>
             </MenuItem>
             {!user ?(<MenuItem key="LoginSignup" onClick={handleCloseNavMenu}>
-             <NavLink to="/login">Login / SignUp</NavLink>
+             <NavLink  className={'navitem'} to="/login">Login / SignUp</NavLink>
             </MenuItem>):(<></>)
             }
             {user?(<MenuItem key="add" onClick={handleCloseNavMenu}>
-              <NavLink to="/create/product">
+              <NavLink  className={'navitem'} to="/create/product">
                 <AddIcon style={{color:'tomato'}}className="facebook" />
               </NavLink>
             </MenuItem>):(<></>)
