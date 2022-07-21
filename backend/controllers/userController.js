@@ -4,11 +4,10 @@ const { sendEmail } = require("../middleware/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 
+// Register user
 exports.registerUser = async (req, res) => {
   let myCloud;
   try {
-    // cloudinar
-
     const { name, email, phone, password, avatar } = req.body;
 
     if (!name || !email || !phone || !password || !avatar) {
@@ -34,7 +33,7 @@ exports.registerUser = async (req, res) => {
         message: "User Already Exists",
       });
     }
-
+    // cloudinary
     myCloud = await cloudinary.v2.uploader.upload(avatar, {
       folder: "avatars",
       width: 150,
@@ -75,8 +74,10 @@ exports.registerUser = async (req, res) => {
   }
 };
 
+// Login User
 exports.loginUser = async (req, res) => {
   try {
+     // fetch the email and password from body
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -85,8 +86,13 @@ exports.loginUser = async (req, res) => {
         message: "please Enter Email / Phone and password",
       });
     }
-    let user = await User.findOne({ email: email }).select("+password");
 
+    // now find the email and password in your data-base and 
+    // select method is used because we marked false in schema so that no one can see it our user passwords
+
+    let user = await User.findOne({ email: email }).select("+password");
+    
+    // if user is not found in our database then handle error
     if (!user) {
       user = await User.findOne({ phone: email }).select("+password");
     }
@@ -98,6 +104,7 @@ exports.loginUser = async (req, res) => {
       });
     }
 
+    // check that password is matched with our database by using own define comparePassword method
     const isPasswordMatched = await user.comparePassword(password);
 
     if (!isPasswordMatched) {
@@ -128,6 +135,7 @@ exports.loginUser = async (req, res) => {
   }
 };
 
+// Logout the User
 exports.logout = async (req, res) => {
   try {
     const options = {
@@ -145,6 +153,7 @@ exports.logout = async (req, res) => {
     });
   }
 };
+
 
 exports.updatePassword = async (req, res) => {
   try {
@@ -282,6 +291,7 @@ exports.myProfile = async (req, res) => {
   }
 };
 
+// Get User Detail
 exports.getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.params.id).populate("products");
@@ -304,6 +314,7 @@ exports.getUserProfile = async (req, res) => {
   }
 };
 
+// get All user Detail
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find({});
@@ -320,8 +331,11 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
+
+// Forgot Password
 exports.forgotPassword = async (req, res) => {
   try {
+    // first find user through email in database
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
       return res.status(404).json({
@@ -330,8 +344,11 @@ exports.forgotPassword = async (req, res) => {
       });
     }
 
+    
+    // Get Password Token
     const resetPasswordToken = user.getResetPasswordToken();
 
+    // this is for saving the value in schema of passwordtoken and passwordexpire
     await user.save();
 
     const resetUrl = `${req.protocol}://${req.get(
@@ -341,6 +358,7 @@ exports.forgotPassword = async (req, res) => {
     const message = `Reset Your Password:\n\n ${resetUrl}`;
 
     try {
+      // Send the email to user after generating token
       await sendEmail({
         email: user.email,
         subject: "Reset Password",
@@ -352,9 +370,11 @@ exports.forgotPassword = async (req, res) => {
         message: `Email sent to ${user.email}`,
       });
     } catch (error) {
+      // if there is error than we already generated a these below token so it's duty define them as undefined
       user.resetPasswordToken = undefined;
       user.resetPasswordExpire = undefined;
 
+      // so again save these values in schema
       await user.save();
 
       res.status(500).json({
@@ -370,8 +390,10 @@ exports.forgotPassword = async (req, res) => {
   }
 };
 
+//  Reset Password
 exports.resetPassword = async (req, res) => {
   try {
+    // creating token hash
     const resetPasswordToken = crypto
       .createHash("sha256")
       .update(req.params.token)
@@ -392,6 +414,7 @@ exports.resetPassword = async (req, res) => {
     user.password = req.body.password;
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
+    // so again save these upper values in schema
     await user.save();
 
     res.status(200).json({
@@ -434,7 +457,6 @@ exports.updateUserRole = async (req, res, next) => {
 };
 
 // admin delete user profile
-
 exports.deleteUser = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
