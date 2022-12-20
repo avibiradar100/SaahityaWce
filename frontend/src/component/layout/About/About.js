@@ -45,7 +45,7 @@ const About = () => {
                     </div>
 
                     <div className="aboutSectionContainer2">
-                        <h3>Aditya Sanap</h3><br/>
+                        <h3>Teknath Jha</h3><br/>
                         <span>Walchand College Of Engineering,Sangli.</span>
                         <Typography component="h2">Get In Touch</Typography>
                         <div className="social">
