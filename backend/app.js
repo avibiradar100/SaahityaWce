@@ -24,9 +24,11 @@ const user = require("./routes/userRoute");
 
 app.use("/api/v1",product);
 app.use("/api/v1",user);
-
+console.log(process.cwd())
 app.get("*", (req, res) => {
+
   res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
+  
 });
 
 module.exports=app;
