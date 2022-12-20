@@ -27,7 +27,7 @@ app.use("/api/v1",user);
 console.log(process.cwd())
 app.get("*", (req, res) => {
 
-  res.sendFile(path.join(process.cwd(), "../frontend/build/index.html"));
+  res.sendFile(path.join(process.cwd(), "/frontend/build/index.html"));
   
 });
 
