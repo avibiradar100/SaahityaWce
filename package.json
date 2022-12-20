@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
-    "postinstall":"cd frontend && npm install && npm run build",
+    "postinstall":"cd frontend && npm install -f && npm run build",
     "dev": "nodemon backend/server.js"
   },
   "author": "avinash biradar",
