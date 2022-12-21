@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Saahitya_WCE/static/css/main.7e9bbdaf.css",
-    "main.js": "/Saahitya_WCE/static/js/main.49595a52.js",
+    "main.js": "/Saahitya_WCE/static/js/main.d7961256.js",
     "static/media/Profile.png": "/Saahitya_WCE/static/media/Profile.697fdcd21f6d157b9073.png",
     "static/media/playstore.png": "/Saahitya_WCE/static/media/playstore.82b4831979e0ce7c733e.png",
     "static/media/Appstore.png": "/Saahitya_WCE/static/media/Appstore.d0c5839937e3c36285f6.png",
     "index.html": "/Saahitya_WCE/index.html",
     "main.7e9bbdaf.css.map": "/Saahitya_WCE/static/css/main.7e9bbdaf.css.map",
-    "main.49595a52.js.map": "/Saahitya_WCE/static/js/main.49595a52.js.map"
+    "main.d7961256.js.map": "/Saahitya_WCE/static/js/main.d7961256.js.map"
   },
   "entrypoints": [
     "static/css/main.7e9bbdaf.css",
-    "static/js/main.49595a52.js"
+    "static/js/main.d7961256.js"
   ]
 }
