@@ -168,7 +168,7 @@ const Header = () => {
             </NavLink>
             { !user ? (
             <NavLink
-              key="LoginsignUp" 
+              key="LoginsignUp"
               to="/login"
               className={"navBarLink"}
             >

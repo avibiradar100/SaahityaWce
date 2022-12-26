@@ -59,36 +59,36 @@ function App() {
 
 
       <Routes>
-        <Route exact path="/Saahitya_WCE/" element={<Home />} />
-        <Route exact path="/Saahitya_WCE/product/:id" element={<ProductDetails />} />
-        <Route exact path="/Saahitya_WCE/products" element={<Products />} />
-        <Route path="/Saahitya_WCE/products/:keyword" element={<Products />} />
-        <Route exact path="/Saahitya_WCE/search" element={<Search />} />
-        <Route exact path="/Saahitya_WCE/about" element={<About />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/product/:id" element={<ProductDetails />} />
+        <Route exact path="/products" element={<Products />} />
+        <Route path="/products/:keyword" element={<Products />} />
+        <Route exact path="/search" element={<Search />} />
+        <Route exact path="/about" element={<About />} />
 
 
         {/* when user is logged in then it will access these resources */}
-        <Route exact path='/Saahitya_WCE/' element={<ProtectedRoute />}>
-          <Route exact path='/Saahitya_WCE/account' element={<Profile />} />
-          <Route exact path="/Saahitya_WCE/update/product/:id" element={<UpdateProduct />} />
-          <Route exact path='/Saahitya_WCE/me/update' element={<UpdateProfile />} />
-          <Route exact path='/Saahitya_WCE/password/update' element={<UpdatePassword />} />
-           <Route exact path="/Saahitya_WCE/my/products" element={<MyProducts/>} />
-          <Route exact path="/Saahitya_WCE/create/product" element={<NewProduct />} />
+        <Route exact path='/' element={<ProtectedRoute />}>
+          <Route exact path='/account' element={<Profile />} />
+          <Route exact path="/update/product/:id" element={<UpdateProduct />} />
+          <Route exact path='/me/update' element={<UpdateProfile />} />
+          <Route exact path='/password/update' element={<UpdatePassword />} />
+           <Route exact path="/my/products" element={<MyProducts/>} />
+          <Route exact path="/create/product" element={<NewProduct />} />
         </Route>
 
         {/* when admin is logged in then it will access these resources */}
-        <Route exact path='/Saahitya_WCE/' element={<AdminRoute />}>
-          <Route exact path="/Saahitya_WCE/admin/dashboard" element={<Dashboard />} />
-          <Route exact path="/Saahitya_WCE/admin/products" element={<ProductList />} />
-          <Route exact path="/Saahitya_WCE/admin/users" element={<UsersList />} />
-          <Route exact path="/Saahitya_WCE/admin/user/:id" element={<UpdateUser />} />
+        <Route exact path='/' element={<AdminRoute />}>
+          <Route exact path="/admin/dashboard" element={<Dashboard />} />
+          <Route exact path="/admin/products" element={<ProductList />} />
+          <Route exact path="/admin/users" element={<UsersList />} />
+          <Route exact path="/admin/user/:id" element={<UpdateUser />} />
         </Route>
 
-        <Route exact path="/Saahitya_WCE/login" element={<LoginSignUp />} />
-        <Route exact path='/Saahitya_WCE/password/forgot' element={<ForgotPassword />} />
-        <Route exact path='/Saahitya_WCE/password/reset/:token' element={<ResetPassword />} />
-        <Route exact path="/Saahitya_WCE/cart" element={<Cart />} />
+        <Route exact path="/login" element={<LoginSignUp />} />
+        <Route exact path='/password/forgot' element={<ForgotPassword />} />
+        <Route exact path='/password/reset/:token' element={<ResetPassword />} />
+        <Route exact path="/cart" element={<Cart />} />
 
         <Route path='*' element={<NotFound />} />
 

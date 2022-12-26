@@ -113,7 +113,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
 
-    let link = `/api/v1/product/${id}`;
+    let link =`/api/v1/product/${id}`;
 
     const { data } = await axios.put(link, productData, config);
 
