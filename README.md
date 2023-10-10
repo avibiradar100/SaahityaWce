@@ -1,3 +1,37 @@
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine
+- MongoDB installed and running
+
+### Installation
+
+1. Clone the repository:
+
+       git clone https://github.com/avibiradar100/SaahityaWce.git
+   
+Navigate to the project directory:
+
+      cd SaahityaWce
+
+Install server dependencies:
+
+      npm install
+
+Navigate to the frontend directory:
+
+      cd  frontend 
+
+Install frontend dependencies:
+
+      npm install
+
+
+TO start the Application open 2 terminal:
+1.     npm run start
+2.     npm run dev 
+
 # Saahitya
 This is a complete Application which helps students to sell the used academic material which is in good condition in college premises
 
@@ -25,6 +59,8 @@ This is a complete Application which helps students to sell the used academic ma
 [![NODEJS](https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white)](https://nodejs.org/en/docs/)
 [![EXPRESSJS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![MONGODB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+
+
 
 ## ScreenShot
 
