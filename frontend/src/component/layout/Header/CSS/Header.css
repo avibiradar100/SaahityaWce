@@ -31,6 +31,7 @@ h1{
   margin: 0 1vmax;
   font-family: "Roboto", Arial, sans-serif;
 }
+
 .navBarLink:hover{
   color: tomato;
 }
