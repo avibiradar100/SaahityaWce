@@ -32,10 +32,17 @@ h1{
   font-family: "Roboto", Arial, sans-serif;
 }
 
+.navBarLink:hover{
+  color: tomato;
+}
+
 .first{
   color: white;
   margin:0 1vmax 0 40vw;
   font-family: "Roboto", Arial, sans-serif;
+}
+.first:hover{
+  color: tomato;
 }
 
 a {
