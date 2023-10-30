@@ -34,8 +34,7 @@ TO start the Application open 2 terminal:
 
 # Saahitya
 This is a complete Application which helps students to sell the used academic material which is in good condition in college premises
-
-### <a href="https://saahitya-wce.onrender.com/" target="_blank">**Visit Now 🚀**</a>
+### <a href="https://saahitya.onrender.com/" target="_blank">**Visit Now 🚀**</a>
 
 
 ## Things Implemented
