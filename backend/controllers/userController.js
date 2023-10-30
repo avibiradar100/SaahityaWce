@@ -16,9 +16,9 @@ exports.registerUser = async (req, res) => {
         message: "Please Provide all values",
       });
     }
-    let user = await User.findOne({ email });
+        let user = await User.findOne({ email });
 
-    if (user) {
+        if (user) {
       return res.status(400).json({
         success: false,
         message: "User Already Exists",
@@ -26,7 +26,7 @@ exports.registerUser = async (req, res) => {
     }
 
     user = await User.findOne({ phone });
-
+    
     if (user) {
       return res.status(400).json({
         success: false,
